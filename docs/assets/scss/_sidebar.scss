@@ -1,14 +1,21 @@
 .docs-sidebar {
   --cui-sidebar-bg: #f0f4f7;
   --cui-sidebar-brand-bg: transparent;
-  --cui-sidebar-brand-color: #{$body-color};
-  --cui-sidebar-nav-link-color: #{$body-color};
-  --cui-sidebar-nav-link-active-color: #{$primary};
-  --cui-sidebar-nav-link-hover-color: #{$primary};
+  --cui-sidebar-nav-link-color: rgba(var(--cui-body-color-rgb), 1);
+  --cui-sidebar-nav-link-active-bg: transparent;
+  --cui-sidebar-nav-link-active-color: rgba(var(--cui-primary-rgb), 1);
+  --cui-sidebar-nav-link-hover-bg: transparent;
+  --cui-sidebar-nav-link-hover-color: rgba(var(--cui-primary-rgb), 1);
   --cui-sidebar-nav-group-bg: transparent;
-  --cui-sidebar-nav-group-toggle-show-color: #{$primary};
+  --cui-sidebar-nav-group-toggle-show-color: rgba(var(--cui-primary-rgb), 1);
+}
 
-  .nav-group-items {
-    --cui-sidebar-nav-link-color: #{$primary-50};
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .docs-sidebar  {
+      --cui-sidebar-bg: #212529;
+      --cui-sidebar-nav-link-active-bg: transparent;
+      --cui-sidebar-nav-link-hover-bg: transparent;
+    }
   }
 }

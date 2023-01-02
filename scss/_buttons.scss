@@ -118,32 +118,82 @@
 // Alternate buttons
 //
 
-.btn-transparent {
-  --#{$prefix}btn-active-border-color: transparent;
-  --#{$prefix}btn-disabled-border-color: transparent;
-  --#{$prefix}btn-hover-border-color: transparent;
-}
-
 // scss-docs-start btn-variant-loops
-@each $state, $variant in $button-variants {
-  .btn-#{$state} {
-    @include button-variant($variant);
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @if $color == "light" {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
+        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
+        $active-background: shade-color($value, $btn-active-bg-shade-amount),
+        $active-border: shade-color($value, $btn-active-border-shade-amount)
+      );
+    } @else if $color == "dark" {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: tint-color($value, $btn-hover-bg-tint-amount),
+        $hover-border: tint-color($value, $btn-hover-border-tint-amount),
+        $active-background: tint-color($value, $btn-active-bg-tint-amount),
+        $active-border: tint-color($value, $btn-active-border-tint-amount)
+      );
+    } @else {
+      @include button-variant($value, $value);
+    }
   }
 }
 
-@each $state, $variant in $button-outline-ghost-variants {
-  .btn-outline-#{$state} {
-    @include button-outline-variant($variant);
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    @each $color, $value in $theme-colors-dark {
+      .btn-#{$color} {
+        @include button-variant(
+          $value,
+          $value,
+          $hover-background: tint-color($value, $btn-hover-bg-tint-amount),
+          $hover-border: tint-color($value, $btn-hover-border-tint-amount),
+          $active-background: tint-color($value, $btn-active-bg-tint-amount),
+          $active-border: tint-color($value, $btn-active-border-tint-amount)
+        );
+      }
+    }
   }
 }
 
-@each $state, $variant in $button-outline-ghost-variants {
-  .btn-ghost-#{$state} {
-    @include button-ghost-variant($variant);
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    @each $color, $value in $theme-colors-dark {
+      .btn-outline-#{$color} {
+        @include button-outline-variant($value);
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-ghost-#{$color} {
+    @include button-ghost-variant($value);
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    @each $color, $value in $theme-colors-dark {
+      .btn-ghost-#{$color} {
+        @include button-ghost-variant($value);
+      }
+    }
   }
 }
 // scss-docs-end btn-variant-loops
-
 
 //
 // Link buttons
@@ -157,6 +207,7 @@
   --#{$prefix}btn-border-color: transparent;
   --#{$prefix}btn-hover-color: #{$btn-link-hover-color};
   --#{$prefix}btn-hover-border-color: transparent;
+  --#{$prefix}btn-active-color: #{$btn-link-hover-color};
   --#{$prefix}btn-active-border-color: transparent;
   --#{$prefix}btn-disabled-color: #{$btn-link-disabled-color};
   --#{$prefix}btn-disabled-border-color: transparent;
@@ -175,6 +226,10 @@
 
   &:focus-visible {
     color: var(--#{$prefix}btn-color);
+  }
+
+  &:hover {
+    color: var(--#{$prefix}btn-hover-color);
   }
 
   // No need for an active state here

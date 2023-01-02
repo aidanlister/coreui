@@ -1,6 +1,6 @@
 /*!
   * CoreUI offcanvas.js v4.2.6 (https://coreui.io)
-  * Copyright 2022 The CoreUI Team (https://github.com/orgs/coreui/people)
+  * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
   * Licensed under MIT (https://coreui.io)
   */
 (function (global, factory) {
@@ -11,11 +11,11 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): dropdown.js
+   * CoreUI (v4.2.6): offcanvas.js
    * Licensed under MIT (https://coreui.io/license)
    *
    * This component is a modified version of the Bootstrap's offcanvas.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 

@@ -27,7 +27,7 @@
   flex-direction: column;
 
   // No need to set list-style: none; since .list-group-item is block level
-  @include ltr-rtl("padding-left", 0); // reset padding because ul and ol
+  padding-left: 0; // reset padding because ul and ol
   margin-bottom: 0;
   @include border-radius(var(--#{$prefix}list-group-border-radius));
 }
@@ -143,11 +143,11 @@
 
         + .list-group-item {
           border-top-width: var(--#{$prefix}list-group-border-width);
-          @include ltr-rtl("border-left-width", 0);
+          border-left-width: 0;
 
           &.active {
-            @include ltr-rtl("margin-left", calc(-1 * var(--#{$prefix}list-group-border-width)));
-            @include ltr-rtl("border-left-width", var(--#{$prefix}list-group-border-width));
+            margin-left: calc(-1 * var(--#{$prefix}list-group-border-width)); // stylelint-disable-line function-disallowed-list
+            border-left-width: var(--#{$prefix}list-group-border-width);
           }
         }
       }
@@ -180,9 +180,25 @@
 // Add modifier classes to change text and background color on individual items.
 // Organizationally, this must come after the `:hover` states.
 
-@each $state, $variant in $list-group-variants {
+@each $state in map-keys($theme-colors) {
   .list-group-item-#{$state} {
-    @include list-group-item-variant($state, $variant);
+    --#{$prefix}list-group-color: var(--#{$prefix}#{$state}-text);
+    --#{$prefix}list-group-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}list-group-border-color: var(--#{$prefix}#{$state}-border-subtle);
+
+    &.list-group-item-action {
+      &:hover,
+      &:focus {
+        --#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+        --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$state}-border-subtle);
+      }
+
+      &:active {
+        --#{$prefix}list-group-active-color: var(--#{$prefix}emphasis-color);
+        --#{$prefix}list-group-active-bg: var(--#{$prefix}#{$state}-text);
+        --#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$state}-text);
+      }
+    }
   }
 }
 // scss-docs-end list-group-modifiers

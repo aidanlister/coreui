@@ -252,53 +252,78 @@ Place CoreUI for Bootstrap's checkboxes and radios within list group items and c
 {{< example >}}
 <ul class="list-group">
   <li class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    First checkbox
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="firstCheckbox">
+    <label class="form-check-label" for="firstCheckbox">First checkbox</label>
   </li>
   <li class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    Second checkbox
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="secondCheckbox">
+    <label class="form-check-label" for="secondCheckbox">Second checkbox</label>
   </li>
   <li class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    Third checkbox
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="thirdCheckbox">
+    <label class="form-check-label" for="thirdCheckbox">Third checkbox</label>
   </li>
   <li class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    Fourth checkbox
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="fourthCheckbox">
+    <label class="form-check-label" for="fourthCheckbox">Fourth checkbox</label>
   </li>
   <li class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    Fifth checkbox
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="fifthCheckbox">
+    <label class="form-check-label" for="fifthCheckbox">Fifth checkbox</label>
   </li>
 </ul>
 {{< /example >}}
 
-And if you want `<label>`s as the `.list-group-item` for large hit areas, you can do that, too.
+{{< example >}}
+<ul class="list-group">
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" aria-label="..." id="firstRadio">
+    <label class="form-check-label" for="firstRadio">First radio</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" aria-label="..." id="secondRadio">
+    <label class="form-check-label" for="secondRadio">Second radio</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" aria-label="..." id="thirdRadio">
+    <label class="form-check-label" for="thirdRadio">Third radio</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" aria-label="..." id="fourthRadio">
+    <label class="form-check-label" for="fourthRadio">Fourth radio</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" aria-label="..." id="fifthRadio">
+    <label class="form-check-label" for="fifthRadio">Fifth radio</label>
+  </li>
+</ul>
+{{< /example >}}
+
+You can use `.stretched-link` on `<label>`s to make the whole list group item clickable.
 
 {{< example >}}
-<div class="list-group">
-  <label class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="">
-    First checkbox
-  </label>
-  <label class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="">
-    Second checkbox
-  </label>
-  <label class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="">
-    Third checkbox
-  </label>
-  <label class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="">
-    Fourth checkbox
-  </label>
-  <label class="list-group-item">
-    <input class="form-check-input me-1" type="checkbox" value="">
-    Fifth checkbox
-  </label>
-</div>
+<ul class="list-group">
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="firstCheckboxStretched">
+    <label class="form-check-label stretched-link" for="firstCheckboxStretched">First checkbox</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="secondCheckboxStretched">
+    <label class="form-check-label stretched-link" for="secondCheckboxStretched">Second checkbox</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="thirdCheckboxStretched">
+    <label class="form-check-label stretched-link" for="thirdCheckboxStretched">Third checkbox</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="fourthCheckboxStretched">
+    <label class="form-check-label stretched-link" for="fourthCheckboxStretched">Fourth checkbox</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="fifthCheckboxStretched">
+    <label class="form-check-label stretched-link" for="fifthCheckboxStretched">Fifth checkbox</label>
+  </li>
+</ul>
 {{< /example >}}
 
 ## JavaScript behavior
@@ -484,38 +509,6 @@ List groups use local CSS variables on `.list-group` for enhanced real-time cust
 ### SASS variables
 
 {{< scss-docs name="list-group-variables" file="scss/_variables.scss" >}}
-
-### SASS variants
-
-CoreUI allows defining variant colors in two ways.
-
-#### Manual
-
-You can define each color manually and keep full control of the component appearance.
-
-{{< highlight scss >}}
-$alert-variants: (
-  "primary": (
-    "background": $your-bg-color,
-    "background-hover": $your-bg-hover-color,
-    "color": $your-color
-  )
-  ...
-);
-{{< /highlight >}}
-
-#### Color function
-
-The color set can be generated automatically thanks to our `list-group-color-map` function.
-
-{{< scss-docs name="list-group-color-functions" file="scss/_functions.scss" >}}
-
-{{< highlight scss >}}
-$alert-variants: (
-  "primary": alert-color-map($primary),
-  ...
-);
-{{< /highlight >}}
 
 ### SASS mixins
 

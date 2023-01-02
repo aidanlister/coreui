@@ -1,6 +1,6 @@
 /*!
   * CoreUI manipulator.js v4.2.6 (https://coreui.io)
-  * Copyright 2022 The CoreUI Team (https://github.com/orgs/coreui/people)
+  * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
   * Licensed under MIT (https://coreui.io)
   */
 (function (global, factory) {
@@ -11,10 +11,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): dom/selector-engine.js
+   * CoreUI (v4.2.6): dom/manipulator.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's dom/manipulator.js
+   * This component is a modified version of the Bootstrap's dom/manipulator.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -56,7 +56,7 @@
         return {};
       }
       const attributes = {};
-      const coreuiKeys = Object.keys(element.dataset).filter(key => key.startsWith('coreui') && !key.startsWith('coreuiConfig'));
+      const coreuiKeys = Object.keys(element.dataset).filter(key => key.startsWith('coreu') && !key.startsWith('coreuiConfig'));
       for (const key of coreuiKeys) {
         let pureKey = key.replace(/^coreui/, '');
         pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length);

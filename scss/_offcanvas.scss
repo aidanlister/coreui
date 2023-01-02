@@ -12,6 +12,8 @@
   --#{$prefix}offcanvas-border-width: #{$offcanvas-border-width};
   --#{$prefix}offcanvas-border-color: #{$offcanvas-border-color};
   --#{$prefix}offcanvas-box-shadow: #{$offcanvas-box-shadow};
+  --#{$prefix}offcanvas-transition: #{transform $offcanvas-transition-duration ease-in-out};
+  --#{$prefix}offcanvas-title-line-height: #{$offcanvas-title-line-height};
   // scss-docs-end offcanvas-css-vars
 }
 
@@ -42,21 +44,21 @@
       background-clip: padding-box;
       outline: 0;
       @include box-shadow(var(--#{$prefix}offcanvas-box-shadow));
-      @include transition(transform $offcanvas-transition-duration ease-in-out);
+      @include transition(var(--#{$prefix}offcanvas-transition));
 
       &.offcanvas-start {
         top: 0;
-        @include ltr-rtl("left", 0);
+        left: 0;
         width: var(--#{$prefix}offcanvas-width);
-        @include ltr-rtl("border-right", var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color));
-        @include ltr-rtl-value-only("transform", translateX(-100%), translateX(100%));
+        border-right: var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color);
+        transform: translateX(-100%);
       }
 
       &.offcanvas-end {
         top: 0;
-        @include ltr-rtl("right", 0);
+        right: 0;
         width: var(--#{$prefix}offcanvas-width);
-        @include ltr-rtl("border-left", var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color));
+        border-left: var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color);
         transform: translateX(100%);
       }
 
@@ -81,7 +83,7 @@
 
       &.showing,
       &.show:not(.hiding) {
-        transform: none !important; // stylelint-disable-line declaration-no-important
+        transform: none;
       }
 
       &.showing,
@@ -115,7 +117,7 @@
 }
 
 .offcanvas-backdrop {
-  @include overlay-backdrop($zindex-offcanvas-backdrop, var(--#{$prefix}offcanvas-backdrop-bg, $offcanvas-backdrop-bg), $offcanvas-backdrop-opacity);
+  @include overlay-backdrop($zindex-offcanvas-backdrop, $offcanvas-backdrop-bg, $offcanvas-backdrop-opacity);
 }
 
 .offcanvas-header {
@@ -127,14 +129,14 @@
   .btn-close {
     padding: calc(var(--#{$prefix}offcanvas-padding-y) * .5) calc(var(--#{$prefix}offcanvas-padding-x) * .5);
     margin-top: calc(-.5 * var(--#{$prefix}offcanvas-padding-y));
-    @include ltr-rtl("margin-right", calc(-.5 * var(--#{$prefix}offcanvas-padding-x)));
+    margin-right: calc(-.5 * var(--#{$prefix}offcanvas-padding-x));
     margin-bottom: calc(-.5 * var(--#{$prefix}offcanvas-padding-y));
   }
 }
 
 .offcanvas-title {
   margin-bottom: 0;
-  line-height: $offcanvas-title-line-height;
+  line-height: var(--#{$prefix}offcanvas-title-line-height);
 }
 
 .offcanvas-body {

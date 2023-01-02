@@ -3,7 +3,7 @@
 //
 
 .docs-example-snippet {
-  border: solid $border-color;
+  border: solid var(--cui-border-color);
   border-width: 1px 0;
 
   @include media-breakpoint-up(md) {
@@ -12,32 +12,36 @@
 }
 
 .docs-example {
-  --bd-example-padding: 1rem;
+  --cui-example-padding: 1rem;
 
   position: relative;
-  padding: var(--bd-example-padding);
+  padding: var(--cui-example-padding);
   margin: 0 ($bd-gutter-x * -.5);
-  border: solid $border-color;
+  border: solid var(--cui-border-color);
   border-width: 1px 0;
   @include clearfix();
 
   @include media-breakpoint-up(md) {
-    --bd-example-padding: 1.5rem;
+    --cui-example-padding: 1.5rem;
 
     margin-right: 0;
     margin-left: 0;
     border-width: 1px;
     @include border-top-radius(var(--cui-border-radius));
-
-    + .docs-clipboard + .highlight {
-      @include border-top-radius(0);
-    }
   }
 
   + .docs-code-snippet {
     @include border-top-radius(0);
-    border: solid $border-color;
+    border: solid var(--cui-border-color);
     border-width: 0 1px 1px;
+
+    .highlight {
+      @include border-top-radius(0);
+    }
+  }
+
+  ~ .highlight {
+    @include border-top-radius(0);
   }
 
   + p {
@@ -62,7 +66,8 @@
     display: block;
   }
 
-  > :last-child {
+  > :last-child,
+  > nav:last-child .breadcrumb {
     margin-bottom: 0;
   }
 
@@ -98,13 +103,13 @@
   .fixed-top,
   .sticky-top {
     position: static;
-    margin: calc(var(--bd-example-padding) * -1) calc(var(--bd-example-padding) * -1) var(--bd-example-padding); // stylelint-disable-line function-disallowed-list
+    margin: calc(var(--cui-example-padding) * -1) calc(var(--cui-example-padding) * -1) var(--cui-example-padding); // stylelint-disable-line function-disallowed-list
   }
 
   .fixed-bottom,
   .sticky-bottom {
     position: static;
-    margin: var(--bd-example-padding) calc(var(--bd-example-padding) * -1) calc(var(--bd-example-padding) * -1); // stylelint-disable-line function-disallowed-list
+    margin: var(--cui-example-padding) calc(var(--cui-example-padding) * -1) calc(var(--cui-example-padding) * -1); // stylelint-disable-line function-disallowed-list
 
   }
 
@@ -119,11 +124,12 @@
 //
 
 .docs-example-row [class^="col"],
-.docs-example-cssgrid .grid > * {
+.docs-example-cols [class^="col"] > *,
+.docs-example-cssgrid [class*="grid"] > * {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  background-color: rgba(var(--bd-violet-rgb), .1);
-  border: 1px solid rgba(var(--bd-violet-rgb), .25);
+  background-color: rgba(var(--cui-violet-rgb), .15);
+  border: 1px solid rgba(var(--cui-violet-rgb), .3);
 }
 
 .docs-example-row .row + .row,
@@ -133,12 +139,12 @@
 
 .docs-example-row-flex-cols .row {
   min-height: 10rem;
-  background-color: rgba(255, 0, 0, .1);
+  background-color: rgba(var(--cui-violet-rgb), .15);
 }
 
 .docs-example-flex div {
-  background-color: rgba($bd-purple, .15);
-  border: 1px solid rgba($bd-purple, .15);
+  background-color: rgba(var(--cui-violet-rgb), .15);
+  border: 1px solid rgba(var(--cui-violet-rgb), .3);
 }
 
 // Grid mixins
@@ -180,9 +186,9 @@
   .ratio {
     display: inline-block;
     width: 10rem;
-    color: $gray-600;
-    background-color: $gray-100;
-    border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+    color: var(--cui-secondary-color);
+    background-color: var(--cui-tertiary-bg);
+    border: var(--cui-border-width) solid var(--cui-border-color);
 
     > div {
       display: flex;
@@ -196,7 +202,7 @@
     width: 16rem;
 
     @include media-breakpoint-up(md) {
-      aspect-ratio: 50%; // 2x1
+      --cui-aspect-ratio: 50%; // 2x1
     }
   }
 }
@@ -207,13 +213,19 @@
     display: block;
     height: 200px;
     visibility: visible;
-    transform: translate(0) !important; // stylelint-disable-line declaration-no-important
+    transform: translate(0);
   }
 }
 
 // Tooltips
-.tooltip-demo a {
-  white-space: nowrap;
+.tooltip-demo {
+  a {
+    white-space: nowrap;
+  }
+
+  .btn {
+    margin: .25rem .125rem;
+  }
 }
 
 // scss-docs-start custom-tooltip
@@ -247,7 +259,7 @@
 
 .simple-list-example-scrollspy {
   .active {
-    background-color: rgba(var(--bd-violet-rgb), .15);
+    background-color: rgba(var(--cui-violet-rgb), .15);
   }
 }
 
@@ -257,7 +269,7 @@
     width: 5rem;
     height: 5rem;
     margin: .25rem;
-    background-color: #f5f5f5;
+    background-color: var(--cui-tertiary-bg);
   }
 }
 
@@ -273,13 +285,13 @@
 
   .position-relative {
     height: 200px;
-    background-color: #f5f5f5;
+    background-color: var(--cui-tertiary-bg);
   }
 
   .position-absolute {
     width: 2rem;
     height: 2rem;
-    background-color: $dark;
+    background-color: var(--cui-body-color);
     @include border-radius();
   }
 }
@@ -306,6 +318,32 @@
   min-height: 240px;
 }
 
+.docs-example-zindex-levels {
+  min-height: 15rem;
+
+  > div {
+    background-color: tint-color($bd-violet, 75%);
+    border: 1px solid tint-color($bd-violet, 50%);
+  }
+
+  > :nth-child(2) {
+    top: 3rem;
+    left: 3rem;
+  }
+  > :nth-child(3) {
+    top: 4.5rem;
+    left: 4.5rem;
+  }
+  > :nth-child(4) {
+    top: 6rem;
+    left: 6rem;
+  }
+  > :nth-child(5) {
+    top: 7.5rem;
+    left: 7.5rem;
+  }
+}
+
 //
 // Code snippets
 //
@@ -314,7 +352,7 @@
   position: relative;
   padding: .75rem ($bd-gutter-x * .5);
   margin-bottom: 1rem;
-  background-color: #f0f4f7;
+  background-color: var(--cui-tertiary-bg);
 
   @include media-breakpoint-up(md) {
     padding: .75rem 1.25rem;
@@ -329,16 +367,11 @@
     white-space: pre;
     background-color: transparent;
     border: 0;
-
-    // Undo tabindex that's automatically added by Hugo
-    &:focus {
-      outline: 0;
-    }
   }
 
   pre code {
     @include font-size(inherit);
-    color: $gray-900; // Effectively the base text color
+    color: var(--cui-body-color); // Effectively the base text color
     word-wrap: normal;
   }
 }
@@ -363,6 +396,12 @@
 }
 
 .highlight-toolbar {
-  border: solid $border-color;
+  background-color: var(--cui-tertiary-bg);
+  border: solid var(--cui-border-color);
   border-width: 1px 0;
+
+  .btn-clipboard {
+    margin-top: 0;
+    margin-right: 0;
+  }
 }

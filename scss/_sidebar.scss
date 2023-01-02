@@ -1,3 +1,14 @@
 @import "sidebar/sidebar";
 @import "sidebar/sidebar-nav";
 @import "sidebar/sidebar-narrow";
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .sidebar {
+      --#{$prefix}sidebar-bg: #{$sidebar-bg-dark};
+      --#{$prefix}sidebar-color: #{$sidebar-color-dark};
+      --#{$prefix}sidebar-nav-link-active-bg: #{$sidebar-nav-link-active-bg-dark};
+      --#{$prefix}sidebar-nav-link-hover-bg: #{$sidebar-nav-link-hover-bg-dark};
+    }
+  }
+}

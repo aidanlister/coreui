@@ -182,7 +182,7 @@ describe('Popover', () => {
       const tip = popover._getTipElement()
 
       expect(tip).toHaveClass('popover')
-      expect(tip).toHaveClass('bs-popover-auto')
+      expect(tip).toHaveClass('cui-popover-auto')
       expect(tip.querySelector('.popover-arrow')).not.toBeNull()
       expect(tip.querySelector('.popover-header')).not.toBeNull()
       expect(tip.querySelector('.popover-body')).not.toBeNull()

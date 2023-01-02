@@ -42,7 +42,7 @@
 }
 
 .table-group-divider {
-  border-top: ($table-border-width * 2) solid $table-group-separator-color;
+  border-top: calc($table-border-width * 2) solid $table-group-separator-color; // stylelint-disable-line function-disallowed-list
 }
 
 //
@@ -142,10 +142,6 @@
 //
 // Table variants set the table cell backgrounds, border colors
 // and the colors of the striped, hovered & active tables
-
-// @each $color, $value in $table-variants {
-//   @include table-variant($color, $value);
-// }
 
 @each $color, $value in $table-variants {
   @include table-variant($color, $value);

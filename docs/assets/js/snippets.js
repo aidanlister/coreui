@@ -20,7 +20,7 @@
   // --------
   // Tooltips
   // --------
-  // Instanciate all tooltips in a docs or StackBlitz page
+  // Instantiate all tooltips in a docs or StackBlitz page
   document.querySelectorAll('[data-coreui-toggle="tooltip"]')
     .forEach(tooltip => {
       new coreui.Tooltip(tooltip)
@@ -29,7 +29,7 @@
   // --------
   // Popovers
   // --------
-  // Instanciate all popovers in a docs or StackBlitz page
+  // Instantiate all popovers in a docs or StackBlitz page
   document.querySelectorAll('[data-coreui-toggle="popover"]')
     .forEach(popover => {
       new coreui.Popover(popover)
@@ -50,7 +50,7 @@
     })
   }
 
-  // Instanciate all toasts in a docs page only
+  // Instantiate all toasts in a docs page only
   document.querySelectorAll('.docs-example .toast')
     .forEach(toastNode => {
       const toast = new coreui.Toast(toastNode, {
@@ -60,7 +60,7 @@
       toast.show()
     })
 
-  // Instanciate all toasts in a docs page only
+  // Instantiate all toasts in a docs page only
   const toastTrigger = document.getElementById('liveToastBtn')
   const toastLiveExample = document.getElementById('liveToast')
   if (toastTrigger) {
@@ -96,13 +96,24 @@
     })
   }
 
+  // --------
+  // Carousels
+  // --------
+  // Instantiate all non-autoplaying carousels in a docs or StackBlitz page
+  document.querySelectorAll('.carousel:not([data-coreui-ride="carousel"])')
+    .forEach(carousel => {
+      coreui.Carousel.getOrCreateInstance(carousel)
+    })
+
   // -------------------------------
   // Checks & Radios
   // -------------------------------
   // Indeterminate checkbox example in docs and StackBlitz
   document.querySelectorAll('.docs-example-indeterminate [type="checkbox"]')
     .forEach(checkbox => {
-      checkbox.indeterminate = true
+      if (checkbox.id.includes('Indeterminate')) {
+        checkbox.indeterminate = true
+      }
     })
 
   // -------------------------------

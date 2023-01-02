@@ -1,0 +1,109 @@
+// Dark color mode variables
+//
+// Custom variables for the `[data-coreui-theme="dark"]` theme. Use this as a starting point for your own custom color modes by creating a new theme-specific file like `_variables-dark.scss` and adding the variables you need.
+
+//
+// Global colors
+//
+
+// scss-docs-start sass-dark-mode-vars
+$gray-100-dark:                    #f8f9fa !default;
+// $gray-200-dark:                    #e9ecef !default;
+$gray-300-dark:                    #dee2e6 !default;
+// $gray-400-dark:                    #ced4da !default;
+$gray-500-dark:                    #adb5bd !default;
+// $gray-600-dark:                    #6c757d !default;
+$gray-700-dark:                    #495057 !default;
+$gray-800-dark:                    #343a40 !default;
+$gray-900-dark:                    #212529 !default;
+
+$primary-dark:                      tint-color(desaturate($primary, 30%), 30%) !default;
+$secondary-dark:                    desaturate($secondary, 30%) !default;
+$success-dark:                      desaturate($success, 30%) !default;
+$info-dark:                         desaturate($info, 30%) !default;
+$warning-dark:                      desaturate($warning, 30%) !default;
+$danger-dark:                       desaturate($danger, 30%) !default;
+$light-dark:                        rgba($white, .1) !default;
+$dark-dark:                         rgba($black, .1) !default;
+
+$theme-colors-dark: (
+  "primary":    $primary-dark,
+  "secondary":  $secondary-dark,
+  "success":    $success-dark,
+  "info":       $info-dark,
+  "warning":    $warning-dark,
+  "danger":     $danger-dark,
+  "light":      $light-dark,
+  "dark":       $dark-dark
+) !default;
+
+$primary-text-dark:                 $blue-300 !default;
+$secondary-text-dark:               $gray-300-dark !default;
+$success-text-dark:                 $green-300 !default;
+$info-text-dark:                    $cyan-300 !default;
+$warning-text-dark:                 $yellow-300 !default;
+$danger-text-dark:                  $red-300 !default;
+$light-text-dark:                   $gray-100-dark !default;
+$dark-text-dark:                    $gray-300-dark !default;
+
+$primary-bg-subtle-dark:            $blue-900 !default;
+$secondary-bg-subtle-dark:          $gray-900-dark !default;
+$success-bg-subtle-dark:            $green-900 !default;
+$info-bg-subtle-dark:               $cyan-900 !default;
+$warning-bg-subtle-dark:            $yellow-900 !default;
+$danger-bg-subtle-dark:             $red-900 !default;
+$light-bg-subtle-dark:              $gray-800-dark !default;
+$dark-bg-subtle-dark:               mix($gray-800-dark, $black) !default;
+
+$primary-border-subtle-dark:        $blue-700 !default;
+$secondary-border-subtle-dark:      $gray-700-dark !default;
+$success-border-subtle-dark:        $green-700 !default;
+$info-border-subtle-dark:           $cyan-800 !default;
+$warning-border-subtle-dark:        $yellow-800 !default;
+$danger-border-subtle-dark:         $red-700 !default;
+$light-border-subtle-dark:          $gray-700-dark !default;
+$dark-border-subtle-dark:           $gray-800-dark !default;
+
+$body-color-dark:                   $gray-500-dark !default;
+$body-bg-dark:                      $gray-900-dark !default;
+$body-emphasis-color-dark:          $gray-100-dark !default;
+$body-secondary-color-dark:         rgba($body-color-dark, .75) !default;
+$body-secondary-bg-dark:            $gray-800-dark !default;
+$body-tertiary-color-dark:          rgba($body-color-dark, .5) !default;
+$body-tertiary-bg-dark:             mix($gray-800-dark, $gray-900-dark, 50%) !default;
+$emphasis-color-dark:               $white !default;
+$border-color-dark:                 $gray-700-dark !default;
+$border-color-translucent-dark:     rgba($white, .15) !default;
+$headings-color-dark:               #fff !default;
+$link-color-dark:                   $blue-300 !default;
+$link-hover-color-dark:             $blue-200 !default;
+$code-color-dark:                   $pink-300 !default;
+
+
+//
+// Forms
+//
+
+$form-select-indicator-color-dark:  $body-color-dark !default;
+$form-select-indicator-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !default;
+
+$form-switch-color-dark:            rgba($white, .25) !default;
+$form-switch-bg-image-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>") !default;
+
+
+//
+// Accordion
+//
+
+$accordion-button-icon-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary-text-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary-text-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+
+//
+// Sidebar
+//
+
+$sidebar-color-dark:               var(--#{$prefix}body-color) !default;
+$sidebar-bg-dark:                  var(--#{$prefix}tertiary-bg) !default;
+$sidebar-nav-link-active-bg-dark:  rgba(var(--#{$prefix}tertiary-color-rgb), .1) !default;
+$sidebar-nav-link-hover-bg-dark:   rgba(var(--#{$prefix}tertiary-color-rgb), .1) !default;
+// scss-docs-end sass-dark-mode-vars

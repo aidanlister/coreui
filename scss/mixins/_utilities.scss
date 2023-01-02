@@ -1,6 +1,6 @@
 // Utility generator
 // Used to generate utilities & print utilities
-@mixin generate-utility($utility, $infix, $is-rfs-media-query: false) {
+@mixin generate-utility($utility, $infix: "", $is-rfs-media-query: false) {
   $values: map-get($utility, values);
 
   // If the values are a list or string, convert it into a map
@@ -26,13 +26,13 @@
     // State params to generate pseudo-classes
     $state: if(map-has-key($utility, state), map-get($utility, state), ());
 
+    // Generate prefixed selector for dark mode
+    $dark-mode: if(map-has-key($utility, dark-mode), map-get($utility, dark-mode), ());
+
     $infix: if($property-class == "" and str-slice($infix, 1, 1) == "-", str-slice($infix, 2), $infix);
 
     // Don't prefix if value key is null (e.g. with shadow class)
     $property-class-modifier: if($key, if($property-class == "" and $infix == "", "", "-") + $key, "");
-
-    // Generate RTL version
-    $generate-rtl: if(map-has-key($utility, rtl), map-get($utility, rtl), false);
 
     @if map-get($utility, rfs) {
       // Inside the media query
@@ -61,6 +61,12 @@
           --#{$prefix}#{$css-variable-name}: #{$value};
         }
 
+        @if $enable-dark-mode and $dark-mode {
+          #{theme-prefix("dark", "#{$property-class + $infix + $property-class-modifier}")} {
+            --#{$prefix}#{$css-variable-name}: #{$value};
+          }
+        }
+
         @each $pseudo in $state {
           .#{$property-class + $infix + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
             --#{$prefix}#{$css-variable-name}: #{$value};
@@ -74,9 +80,13 @@
                 --#{$prefix}#{$local-var}: #{$variable};
               }
             }
-            @if $generate-rtl == true {
-              @include ltr-rtl($property, $value, null, null, if($enable-important-utilities, !important, null));
-            } @else {
+            #{$property}: $value if($enable-important-utilities, !important, null);
+          }
+        }
+
+        @if $enable-dark-mode and $dark-mode {
+          @each $property in $properties {
+            #{theme-prefix("dark", "#{$property-class + $infix + $property-class-modifier}")} {
               #{$property}: $value if($enable-important-utilities, !important, null);
             }
           }

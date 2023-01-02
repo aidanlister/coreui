@@ -1,6 +1,6 @@
 /*!
   * CoreUI [object Object] v4.2.6 (https://coreui.io)
-  * Copyright 2022 The CoreUI Team (https://github.com/orgs/coreui/people)
+  * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
   * Licensed under MIT (https://coreui.io)
   */
 (function (global, factory) {
@@ -30,10 +30,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/index.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/index.js
+   * This component is a modified version of the Bootstrap's util/index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -280,10 +280,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): dom/selector-engine.js
+   * CoreUI (v4.2.6): dom/event-handler.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's dom/event-handler.js
+   * This component is a modified version of the Bootstrap's dom/event-handler.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -505,10 +505,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): dom/selector-engine.js
+   * CoreUI (v4.2.6): dom/data.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's dom/data.js
+   * This component is a modified version of the Bootstrap's dom/data.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -556,10 +556,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): dom/selector-engine.js
+   * CoreUI (v4.2.6): dom/manipulator.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's dom/manipulator.js
+   * This component is a modified version of the Bootstrap's dom/manipulator.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -601,7 +601,7 @@
         return {};
       }
       const attributes = {};
-      const coreuiKeys = Object.keys(element.dataset).filter(key => key.startsWith('coreui') && !key.startsWith('coreuiConfig'));
+      const coreuiKeys = Object.keys(element.dataset).filter(key => key.startsWith('coreu') && !key.startsWith('coreuiConfig'));
       for (const key of coreuiKeys) {
         let pureKey = key.replace(/^coreui/, '');
         pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length);
@@ -616,10 +616,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/config.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/config.js
+   * This component is a modified version of the Bootstrap's util/config.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -671,7 +671,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): alert.js
+   * CoreUI (v4.2.6): base-component.js
    * Licensed under MIT (https://coreui.io/license)
    *
    * This component is a modified version of the Bootstrap's base-component.js
@@ -745,7 +745,7 @@
    * CoreUI (v4.2.6): dom/selector-engine.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's dom/selector-engine.js
+   * This component is a modified version of the Bootstrap's dom/selector-engine.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -833,10 +833,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/component-functions.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/component-functions.js
+   * This component is a modified version of the Bootstrap's util/component-functions.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -937,7 +937,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): alert.js
+   * CoreUI (v4.2.6): button.js
    * Licensed under MIT (https://coreui.io/license)
    *
    * This component is a modified version of the Bootstrap's button.js
@@ -1003,10 +1003,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/swipe.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/swipe.js
+   * This component is a modified version of the Bootstrap's util/swipe.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1811,7 +1811,7 @@
       super(element, config);
       this._popper = null;
       this._parent = this._element.parentNode; // dropdown wrapper
-      // todo: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.2/forms/input-group/
+      // todo: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.3/forms/input-group/
       this._menu = SelectorEngine.next(this._element, SELECTOR_MENU)[0] || SelectorEngine.prev(this._element, SELECTOR_MENU)[0] || SelectorEngine.findOne(SELECTOR_MENU, this._parent);
       this._inNavbar = this._detectNavbar();
     }
@@ -2067,7 +2067,7 @@
       }
       event.preventDefault();
 
-      // todo: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.2/forms/input-group/
+      // todo: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.3/forms/input-group/
       const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$4) ? this : SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$4)[0] || SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$4)[0] || SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$4, event.delegateTarget.parentNode);
       const instance = Dropdown.getOrCreateInstance(getToggleButton);
       if (isUpOrDownEvent) {
@@ -2106,10 +2106,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/scrollBar.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/scrollBar.js
+   * This component is a modified version of the Bootstrap's  util/scrollBar.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2206,10 +2206,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/backdrop.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/backdrop.js
+   * This component is a modified version of the Bootstrap's util/backdrop.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2333,10 +2333,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/focustrap.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/focustrap.js
+   * This component is a modified version of the Bootstrap's util/focustrap.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2997,11 +2997,11 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): dropdown.js
+   * CoreUI (v4.2.6): offcanvas.js
    * Licensed under MIT (https://coreui.io/license)
    *
    * This component is a modified version of the Bootstrap's offcanvas.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
 
@@ -3230,10 +3230,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/sanitizer.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/sanitizer.js
+   * This component is a modified version of the Bootstrap's util/sanitizer.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3328,10 +3328,10 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tab.js
+   * CoreUI (v4.2.6): util/template-factory.js
    * Licensed under MIT (https://coreui.io/license)
    *
-   * This is a modified version of the Bootstrap's util/template-factory.js
+   * This component is a modified version of the Bootstrap's util/template-factory.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3721,7 +3721,7 @@
       }
       tip.classList.remove(CLASS_NAME_FADE$2, CLASS_NAME_SHOW$3);
       // todo: on v6 the following can be achieved with CSS only
-      tip.classList.add(`bs-${this.constructor.NAME}-auto`);
+      tip.classList.add(`cui-${this.constructor.NAME}-auto`);
       const tipId = getUID(this.constructor.NAME).toString();
       tip.setAttribute('id', tipId);
       if (this._isAnimated()) {

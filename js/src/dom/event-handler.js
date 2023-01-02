@@ -1,9 +1,9 @@
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dom/selector-engine.js
+ * CoreUI (v4.2.6): dom/event-handler.js
  * Licensed under MIT (https://coreui.io/license)
  *
- * This is a modified version of the Bootstrap's dom/event-handler.js
+ * This component is a modified version of the Bootstrap's dom/event-handler.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */

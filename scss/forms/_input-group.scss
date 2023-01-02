@@ -51,11 +51,11 @@
   @include font-size($input-font-size); // Match inputs
   font-weight: $input-group-addon-font-weight;
   line-height: $input-line-height;
-  color: var(--#{$prefix}input-group-addon-color, $input-group-addon-color);
+  color: $input-group-addon-color;
   text-align: center;
   white-space: nowrap;
-  background-color: var(--#{$prefix}input-group-addon-bg, $input-group-addon-bg);
-  border: $input-border-width solid var(--#{$prefix}input-group-addon-border-color, $input-group-addon-border-color);
+  background-color: $input-group-addon-bg;
+  border: $input-border-width solid $input-group-addon-border-color;
   @include border-radius($input-border-radius);
 }
 
@@ -85,7 +85,7 @@
 
 .input-group-lg > .form-select,
 .input-group-sm > .form-select {
-  @include ltr-rtl("padding-right", $form-select-padding-x + $form-select-indicator-padding);
+  padding-right: $form-select-padding-x + $form-select-indicator-padding;
 }
 
 
@@ -121,7 +121,7 @@
   }
 
   > :not(:first-child):not(.dropdown-menu)#{$validation-messages} {
-    @include ltr-rtl("margin-left", -$input-border-width);
+    margin-left: calc($input-border-width * -1); // stylelint-disable-line function-disallowed-list
     @include border-start-radius(0);
   }
 

@@ -1,9 +1,9 @@
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): tab.js
+ * CoreUI (v4.2.6): util/scrollBar.js
  * Licensed under MIT (https://coreui.io/license)
  *
- * This is a modified version of the Bootstrap's util/scrollBar.js
+ * This component is a modified version of the Bootstrap's  util/scrollBar.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */

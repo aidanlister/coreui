@@ -45,10 +45,5 @@ By default, range inputs "snap" to integer values. To change this, you can speci
 
 ## Customizing
 
-### SASS
-
-#### Variables
+### SASS Variables
 {{< scss-docs name="form-range-variables" file="scss/_variables.scss" >}}
-
-### CSS Vars
-{{< css-vars-docs file="scss/forms/_form-range.scss" >}}

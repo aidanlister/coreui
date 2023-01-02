@@ -12,6 +12,7 @@
   --#{$prefix}alert-border-color: transparent;
   --#{$prefix}alert-border: #{$alert-border-width} solid var(--#{$prefix}alert-border-color);
   --#{$prefix}alert-border-radius: #{$alert-border-radius};
+  --#{$prefix}alert-link-color: inherit;
   // scss-docs-end alert-css-vars
 
   position: relative;
@@ -41,13 +42,13 @@
 // Expand the right padding and account for the close button's positioning.
 
 .alert-dismissible {
-  @include ltr-rtl("padding-right", $alert-dismissible-padding-r);
+  padding-right: $alert-dismissible-padding-r;
 
   // Adjust close link position
   .btn-close {
     position: absolute;
     top: 0;
-    @include ltr-rtl("right", 0);
+    right: 0;
     z-index: $stretched-link-z-index + 1;
     padding: $alert-padding-y * 1.25 $alert-padding-x;
   }
@@ -55,18 +56,13 @@
 
 
 // scss-docs-start alert-modifiers
-// Generate contextual modifier classes for colorizing the alert.
-
-@each $state, $value in $alert-variants {
-  $alert-background: map-get($value, "alert-bg");
-  $alert-border: map-get($value, "alert-border");
-  $alert-color: map-get($value, "alert-color");
-
-  @if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
-    $alert-color: mix(map-get($value, "base-color"), color-contrast($alert-background), abs($alert-color-scale));
-  }
+// Generate contextual modifier classes for colorizing the alert
+@each $state in map-keys($theme-colors) {
   .alert-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text);
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text);
   }
 }
 // scss-docs-end alert-modifiers

@@ -2,6 +2,8 @@
 **/dist/
 **/vendor/
 /_gh_pages/
+/_js/
+/_scss/
 /js/coverage/
 /js/tests/integration/
 /docs/content/_index.html

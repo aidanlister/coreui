@@ -40,6 +40,7 @@ Change the border color using utilities built on our theme colors.
 {{< border.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
 <span class="border border-{{ .name }}"></span>
+<span class="border border-{{ .name }}-subtle"></span>
 {{- end -}}
 {{< /border.inline >}}
 <span class="border border-white"></span>
@@ -57,7 +58,6 @@ Using utilities you can change the border on one side only, or you can change al
 <span class="border border-top-primary border-end-danger border-bottom-success border-start-info"></span>
 {{< /example >}}
 
-## Border-width
 Or modify the default `border-color` of a component:
 
 {{< example >}}

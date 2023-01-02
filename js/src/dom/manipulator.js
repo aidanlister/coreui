@@ -1,9 +1,9 @@
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dom/selector-engine.js
+ * CoreUI (v4.2.6): dom/manipulator.js
  * Licensed under MIT (https://coreui.io/license)
  *
- * This is a modified version of the Bootstrap's dom/manipulator.js
+ * This component is a modified version of the Bootstrap's dom/manipulator.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -55,7 +55,7 @@ const Manipulator = {
     }
 
     const attributes = {}
-    const coreuiKeys = Object.keys(element.dataset).filter(key => key.startsWith('coreui') && !key.startsWith('coreuiConfig'))
+    const coreuiKeys = Object.keys(element.dataset).filter(key => key.startsWith('coreu') && !key.startsWith('coreuiConfig'))
 
     for (const key of coreuiKeys) {
       let pureKey = key.replace(/^coreui/, '')

@@ -1,10 +1,10 @@
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dropdown.js
+ * CoreUI (v4.2.6): offcanvas.js
  * Licensed under MIT (https://coreui.io/license)
  *
  * This component is a modified version of the Bootstrap's offcanvas.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 

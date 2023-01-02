@@ -62,8 +62,8 @@
   @include border-top-radius(calc(var(--#{$prefix}toast-border-radius) - var(--#{$prefix}toast-border-width)));
 
   .btn-close {
-    @include ltr-rtl("margin-right", calc(-.5 * var(--#{$prefix}toast-padding-x)));
-    @include ltr-rtl("margin-left", var(--#{$prefix}toast-padding-x));
+    margin-right: calc(-.5 * var(--#{$prefix}toast-padding-x)); // stylelint-disable-line function-disallowed-list
+    margin-left: var(--#{$prefix}toast-padding-x);
   }
 }
 

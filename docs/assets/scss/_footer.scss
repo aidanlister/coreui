@@ -3,11 +3,13 @@
 //
 
 .footer {
+  --cui-footer-color: var(--cui-body-color);
   --cui-footer-bg: #f0f4f7;
+  --cui-footer-border-color: var(--cui-border-color);
   @include font-size(.875rem);
 
   a {
-    color: $gray-700;
+    color: rgba(var(--cui-body-color-rgb), 50%);
     text-decoration: none;
 
     &:hover,
@@ -17,3 +19,12 @@
     }
   }
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .footer  {
+      --cui-footer-bg: #212529;
+    }
+  }
+}
+

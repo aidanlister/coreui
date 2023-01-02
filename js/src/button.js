@@ -1,13 +1,12 @@
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): alert.js
+ * CoreUI (v4.2.6): button.js
  * Licensed under MIT (https://coreui.io/license)
  *
  * This component is a modified version of the Bootstrap's button.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
-
 import { defineJQueryPlugin } from './util/index.js'
 import EventHandler from './dom/event-handler.js'
 import BaseComponent from './base-component.js'

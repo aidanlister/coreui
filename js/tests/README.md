@@ -1,4 +1,4 @@
-## How does CoreUI's test suite work?
+## How does Bootstrap's test suite work?
 
 Bootstrap uses [Jasmine](https://jasmine.github.io/). Each plugin has a file dedicated to its tests in `tests/unit/<plugin-name>.spec.js`.
 
@@ -22,7 +22,7 @@ To run the unit test suite via [Karma](https://karma-runner.github.io/) and debu
 - Each test should be in the corresponding `describe`.
 - Each test should test only one unit per test, although one test can include several assertions. Create multiple tests for multiple units of functionality.
 - Each test should use [`expect`](https://jasmine.github.io/api/edge/matchers.html) to ensure something is expected.
-- Each test should follow the project's [JavaScript Code Guidelines](https://github.com/coreui/coreui/blob/main/.github/CONTRIBUTING.md#js)
+- Each test should follow the project's [JavaScript Code Guidelines](https://github.com/twbs/bootstrap/blob/main/.github/CONTRIBUTING.md#js)
 
 ## Code coverage
 
@@ -59,8 +59,8 @@ it('should show a tooltip without the animation', () => {
       animation: false
     })
 
-  tooltipEl.addEventListener('shown.coreui.tooltip', () => {
-    const tip = document.querySelector('.tooltip')
+    tooltipEl.addEventListener('shown.coreui.tooltip', () => {
+      const tip = document.querySelector('.tooltip')
 
       expect(tip).not.toBeNull()
       expect(tip.classList.contains('fade')).toEqual(false)

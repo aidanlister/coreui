@@ -87,7 +87,7 @@ hr {
   font-style: $headings-font-style;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
-  color: var(--#{$prefix}heading-color);
+  color: var(--#{$prefix}heading-color, inherit);
 }
 
 h1 {
@@ -156,10 +156,10 @@ address {
 
 // Lists
 
-// ol,
-// ul {
-//   @include ltr-rtl("padding-left", 2rem); // TODO: find solution
-// }
+ol,
+ul {
+  padding-left: 2rem;
+}
 
 ol,
 ul,
@@ -183,7 +183,7 @@ dt {
 
 dd {
   margin-bottom: .5rem;
-  @include ltr-rtl("margin-left", 0); // 1
+  margin-left: 0; // 1
 }
 
 
@@ -241,11 +241,11 @@ sup { top: -.5em; }
 // Links
 
 a {
-  color: var(--#{$prefix}link-color);
+  color: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, 1));
   text-decoration: $link-decoration;
 
   &:hover {
-    color: var(--#{$prefix}link-hover-color);
+    --#{$prefix}link-color-rgb: var(--#{$prefix}link-hover-color-rgb);
     text-decoration: $link-hover-decoration;
   }
 }
@@ -284,7 +284,7 @@ pre {
   margin-bottom: 1rem; // 2
   overflow: auto; // 3
   @include font-size($code-font-size);
-  color: var(--#{$prefix}pre-color, $pre-color);
+  color: $pre-color;
 
   // Account for some code outputs that place code tags in pre tags
   code {
@@ -308,8 +308,8 @@ code {
 kbd {
   padding: $kbd-padding-y $kbd-padding-x;
   @include font-size($kbd-font-size);
-  color: var(--#{$prefix}kbd-color, $kbd-color);
-  background-color: var(--#{$prefix}kbd-bg, $kbd-bg);
+  color: $kbd-color;
+  background-color: $kbd-bg;
   @include border-radius($border-radius-sm);
 
   kbd {
@@ -349,7 +349,7 @@ table {
 caption {
   padding-top: $table-cell-padding-y;
   padding-bottom: $table-cell-padding-y;
-  color: var(--#{$prefix}table-caption-color, $table-caption-color);
+  color: $table-caption-color;
   text-align: left;
 }
 
@@ -494,7 +494,7 @@ fieldset {
 //    See https://github.com/twbs/bootstrap/issues/29712
 
 legend {
-  @include ltr-rtl("float", left); // 1
+  float: left; // 1
   width: 100%;
   padding: 0;
   margin-bottom: $legend-margin-bottom;
@@ -537,16 +537,17 @@ legend {
 
 // 1. A few input types should stay LTR
 // See https://rtlstyling.com/posts/rtl-styling#form-inputs
+// 2. RTL only output
+// See https://rtlcss.com/learn/usage-guide/control-directives/#raw
 
-*[dir="rtl"] {
-  [type="tel"],
-  [type="url"],
-  [type="email"],
-  [type="number"] {
-    direction: ltr;
-  }
+/* rtl:raw:
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="number"] {
+  direction: ltr;
 }
-
+*/
 
 // Remove the inner padding in Chrome and Safari on macOS.
 

@@ -517,11 +517,11 @@ describe('Tooltip', () => {
         })
 
         tooltipEl.addEventListener('inserted.coreui.tooltip', () => {
-          expect(tooltip._getTipElement()).toHaveClass('bs-tooltip-auto')
+          expect(tooltip._getTipElement()).toHaveClass('cui-tooltip-auto')
         })
 
         tooltipEl.addEventListener('shown.coreui.tooltip', () => {
-          expect(tooltip._getTipElement()).toHaveClass('bs-tooltip-auto')
+          expect(tooltip._getTipElement()).toHaveClass('cui-tooltip-auto')
           expect(tooltip._getTipElement().getAttribute('data-popper-placement')).toEqual('bottom')
           resolve()
         })
@@ -1199,7 +1199,7 @@ describe('Tooltip', () => {
       const tip = tooltip._getTipElement()
 
       expect(tip).toHaveClass('tooltip')
-      expect(tip).toHaveClass('bs-tooltip-auto')
+      expect(tip).toHaveClass('cui-tooltip-auto')
       expect(tip.querySelector('.tooltip-arrow')).not.toBeNull()
       expect(tip.querySelector('.tooltip-inner')).not.toBeNull()
     })

@@ -23,6 +23,7 @@
     - title: Sass
     - title: Options
     - title: Color
+    - title: Color modes
     - title: Components
     - title: CSS variables
     - title: Optimize
@@ -78,7 +79,6 @@
     - title: Collapse
     - title: Dropdowns
     - title: Footer
-    - title: Header
     - title: List group
     - title: Modal
     - title: Navbar
@@ -119,6 +119,7 @@
     - title: Flex
     - title: Float
     - title: Interactions
+    - title: Object fit
     - title: Opacity
     - title: Overflow
     - title: Position
@@ -128,6 +129,7 @@
     - title: Text
     - title: Vertical align
     - title: Visibility
+    - title: Z-index
 
 - title: Templates
   icon: devices
@@ -140,3 +142,9 @@
     - title: Installation
     - title: Customize
     - title: Contents
+
+- title: Migration
+  icon: update
+  pages:
+    - title: v5
+    - title: v4

@@ -64,7 +64,7 @@
 
   &[data-coreui-popper] {
     top: 100%;
-    @include ltr-rtl("left", 0);
+    left: 0;
     margin-top: var(--#{$prefix}dropdown-spacer);
   }
 
@@ -82,7 +82,7 @@
 }
 
 // scss-docs-start responsive-breakpoints
-// We deliberately hardcode the `cui-` prefix because we check
+// We deliberately hardcode the `bs-` prefix because we check
 // this custom property in JS to determine Popper's positioning
 
 @each $breakpoint in map-keys($grid-breakpoints) {
@@ -128,10 +128,10 @@
 .dropend {
   .dropdown-menu[data-coreui-popper] {
     top: 0;
-    @include ltr-rtl("right", auto);
-    @include ltr-rtl("left", 100%);
+    right: auto;
+    left: 100%;
     margin-top: 0;
-    @include ltr-rtl("margin-left", var(--#{$prefix}dropdown-spacer));
+    margin-left: var(--#{$prefix}dropdown-spacer);
   }
 
   .dropdown-toggle {
@@ -145,11 +145,10 @@
 .dropstart {
   .dropdown-menu[data-coreui-popper] {
     top: 0;
-
-    @include ltr-rtl("right", 100%);
-    @include ltr-rtl("left", auto);
+    right: 100%;
+    left: auto;
     margin-top: 0;
-    @include ltr-rtl("margin-right", var(--#{$prefix}dropdown-spacer));
+    margin-right: var(--#{$prefix}dropdown-spacer);
   }
 
   .dropdown-toggle {
@@ -185,6 +184,7 @@
   white-space: nowrap; // prevent links from randomly breaking onto new lines
   background-color: transparent; // For `<button>`s
   border: 0; // For `<button>`s
+  @include border-radius(var(--#{$prefix}dropdown-item-border-radius, 0));
 
   &:hover,
   &:focus {

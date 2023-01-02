@@ -1,6 +1,6 @@
 /*!
   * CoreUI tooltip.js v4.2.6 (https://coreui.io)
-  * Copyright 2022 The CoreUI Team (https://github.com/orgs/coreui/people)
+  * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
   * Licensed under MIT (https://coreui.io)
   */
 (function (global, factory) {
@@ -285,7 +285,7 @@
       }
       tip.classList.remove(CLASS_NAME_FADE, CLASS_NAME_SHOW);
       // todo: on v6 the following can be achieved with CSS only
-      tip.classList.add(`bs-${this.constructor.NAME}-auto`);
+      tip.classList.add(`cui-${this.constructor.NAME}-auto`);
       const tipId = index_js.getUID(this.constructor.NAME).toString();
       tip.setAttribute('id', tipId);
       if (this._isAnimated()) {

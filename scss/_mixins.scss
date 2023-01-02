@@ -2,9 +2,6 @@
 //
 // Used in conjunction with global variables to enable certain theme features.
 
-// LTR & RTL
-@import "mixins/ltr-rtl";
-
 // Vendor
 @import "vendor/rfs";
 
@@ -13,6 +10,7 @@
 
 // Helpers
 @import "mixins/breakpoints";
+@import "mixins/color-mode";
 @import "mixins/color-scheme";
 @import "mixins/image";
 @import "mixins/resize";
@@ -24,17 +22,13 @@
 @import "mixins/utilities";
 
 // Components
-@import "mixins/alert";
-@import "mixins/avatar";
 @import "mixins/backdrop";
 @import "mixins/buttons";
 @import "mixins/caret";
 @import "mixins/pagination";
 @import "mixins/lists";
-@import "mixins/list-group";
 @import "mixins/forms";
 @import "mixins/table-variants";
-@import "mixins/icon";
 
 // Skins
 @import "mixins/border-radius";
@@ -47,5 +41,6 @@
 @import "mixins/container";
 @import "mixins/grid";
 
-// CSS Variables
-@import "mixins/css-vars";
+// CoreUI Components
+@import "mixins/avatar";
+@import "mixins/icon";
