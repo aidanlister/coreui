@@ -39,13 +39,12 @@
       bottom: 0;
 
       &::before {
-        // @include ltr-rtl("transform", rotate(-180deg), null, rotate(0deg));
-        transform: rotate(-180deg), null, rotate(0deg);
+        transform: rotate(180deg) #{"/* rtl:rotate(0deg) */"};
       }
     }
 
     &.sidebar-end .sidebar-toggler::before {
-      transform: rotate(0deg);
+      transform: rotate(0deg) #{"/* rtl:rotate(180deg) */"};
     }
   }
 }
@@ -78,13 +77,12 @@
   &:hover {
     .sidebar-toggler {
       &::before {
-        // @include ltr-rtl("transform", rotate(-180deg), null, rotate(0deg));
-        transform: rotate(-180deg), null, rotate(0deg);
+        transform: rotate(-180deg) #{"/* rtl:rotate(0deg) */"};
       }
     }
 
     &.sidebar-end .sidebar-toggler::before {
-      transform: rotate(0deg);
+      transform: rotate(0deg) #{"/* rtl:rotate(180deg) */"};
     }
   }
 }
@@ -97,11 +95,9 @@
       &.sidebar-narrow,
       &.sidebar-narrow-unfoldable {
         &:not(.sidebar-end) {
-          // @include ltr-rtl("margin-left", calc(var(--#{$prefix}sidebar-narrow-width) * -1));
           margin-left: calc(var(--#{$prefix}sidebar-narrow-width) * -1); // stylelint-disable-line function-disallowed-list
         }
         &.sidebar-end {
-          // @include ltr-rtl("margin-right", calc(var(--#{$prefix}sidebar-narrow-width) * -1));
           margin-right: calc(var(--#{$prefix}sidebar-narrow-width) * -1); // stylelint-disable-line function-disallowed-list
         }
       }

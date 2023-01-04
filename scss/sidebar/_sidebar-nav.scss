@@ -94,7 +94,6 @@
     @include transition(inherit);
 
     &:first-child {
-      // @include ltr-rtl("margin-left", calc(var(--#{$prefix}sidebar-nav-link-padding-x) * -1));
       margin-left: calc(var(--#{$prefix}sidebar-nav-link-padding-x) * -1); // stylelint-disable-line function-disallowed-list
     }
   }
@@ -141,7 +140,6 @@
       display: block;
       flex: 0 12px;
       height: 12px;
-      // @include ltr-rtl("margin-left", auto);
       margin-left: auto;
       content: "";
       background-image: var(--#{$prefix}sidebar-nav-group-indicator);
@@ -156,11 +154,9 @@
     list-style: none;
 
     .nav-link {
-      // @include ltr-rtl("padding-left", var(--#{$prefix}sidebar-nav-icon-width));
       padding-left: var(--#{$prefix}sidebar-nav-icon-width);
 
       .nav-icon {
-        // @include ltr-rtl("margin-left", calc(var(--#{$prefix}sidebar-nav-icon-width) * -1));
         margin-left: calc(var(--#{$prefix}sidebar-nav-icon-width) * -1); // stylelint-disable-line function-disallowed-list
       }
     }
