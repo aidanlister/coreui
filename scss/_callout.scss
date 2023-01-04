@@ -15,8 +15,6 @@
   border: var(--#{$prefix}callout-border-width) solid var(--#{$prefix}callout-border-color);
   border-left-color: var(--#{$prefix}callout-border-left-color);
   border-left-width: var(--#{$prefix}callout-border-left-width);
-  // @include ltr-rtl("border-left-color", var(--#{$prefix}callout-border-left-color));
-  // @include ltr-rtl("border-left-width", var(--#{$prefix}callout-border-left-width));
   @include border-radius(var(--#{$prefix}callout-border-radius));
 }
 
