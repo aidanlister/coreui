@@ -6,8 +6,8 @@
   padding: 1.25rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  background-color: var(--bd-callout-bg, var(--cui-gray-100));
-  border-left: .25rem solid var(--bd-callout-border, var(--cui-gray-300));
+  background-color: var(--cui-callout-bg, var(--cui-gray-100));
+  border-left: .25rem solid var(--cui-callout-border, var(--cui-gray-300));
 
   h4 {
     margin-bottom: .25rem;
@@ -29,7 +29,7 @@
 // Variations
 @each $variant in $bd-callout-variants {
   .docs-callout-#{$variant} {
-    --bd-callout-bg: rgba(var(--cui-#{$variant}-rgb), .075);
-    --bd-callout-border: rgba(var(--cui-#{$variant}-rgb), .5);
+    --cui-callout-bg: rgba(var(--cui-#{$variant}-rgb), .075);
+    --cui-callout-border: rgba(var(--cui-#{$variant}-rgb), .5);
   }
 }

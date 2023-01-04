@@ -10,13 +10,13 @@ $bd-gutter-x: 3rem;
 $bd-callout-variants: info, warning, danger !default;
 
 :root {
-  --bd-purple: #{$bd-purple};
-  --bd-violet: #{$bd-violet};
-  --bd-accent: #{$bd-accent};
-  --bd-violet-rgb: #{to-rgb($bd-violet)};
-  --bd-accent-rgb: #{to-rgb($bd-accent)};
-  --bd-pink-rgb: #{to-rgb($pink-500)};
-  --bd-teal-rgb: #{to-rgb($teal-500)};
-  --docsearch-primary-color: var(--bd-violet);
-  --docsearch-logo-color: var(--bd-violet);
+  --cui-purple: #{$bd-purple};
+  --cui-violet: #{$bd-violet};
+  --cui-accent: #{$bd-accent};
+  --cui-violet-rgb: #{to-rgb($bd-violet)};
+  --cui-accent-rgb: #{to-rgb($bd-accent)};
+  --cui-pink-rgb: #{to-rgb($pink-500)};
+  --cui-teal-rgb: #{to-rgb($teal-500)};
+  --docsearch-primary-color: var(--cui-violet);
+  --docsearch-logo-color: var(--cui-violet);
 }

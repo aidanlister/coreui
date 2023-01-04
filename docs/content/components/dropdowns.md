@@ -354,7 +354,11 @@ Button dropdowns work with buttons of all sizes, including default and split dro
 
 ## Dark dropdowns
 
+{{< deprecated-in "5.0.0" >}}
+
 Opt into darker dropdowns to match a dark navbar or custom style by adding `.dropdown-menu-dark` onto an existing `.dropdown-menu`. No changes are required to the dropdown items.
+
+{{< callout-deprecated-dark-variants "dropdown-menu" >}}
 
 {{< example >}}
 <div class="dropdown">
@@ -383,9 +387,9 @@ And putting it to use in a navbar:
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-coreui-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-dark dropdown-toggle" data-coreui-toggle="dropdown" aria-expanded="false">
             Dropdown
-          </a>
+          </button>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -959,7 +963,7 @@ By default, the dropdown menu is closed when clicking inside or outside the drop
 
 <div class="btn-group">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-coreui-toggle="dropdown" data-coreui-auto-close="inside" aria-expanded="false">
-    Clickable outside
+    Clickable inside
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Menu item</a></li>
@@ -970,7 +974,7 @@ By default, the dropdown menu is closed when clicking inside or outside the drop
 
 <div class="btn-group">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-coreui-toggle="dropdown" data-coreui-auto-close="outside" aria-expanded="false">
-    Clickable inside
+    Clickable outside
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Menu item</a></li>
@@ -1038,7 +1042,7 @@ Regardless of whether you call your dropdown via JavaScript or instead use the d
 {{< bs-table "table" >}}
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `autoClose` | boolean, string | `true` | Configure the auto close behavior of the dropdown: <ul class="my-2"><li>`true` - the dropdown will be closed by clicking outside or inside the dropdown menu.</li><li>`false` - the dropdown will be closed by clicking the toggle button and manually calling `hide` or `toggle` method. (Also will not be closed by pressing <kbd>esc</kbd> key)</li><li>`'inside'` - the dropdown will be closed (only) by clicking inside the dropdown menu.</li>  <li>`'outside'` - the dropdown will be closed (only) by clicking outside the dropdown menu.</li></ul> Note: the dropdown can always be closed with the <kbd>ESC</kbd> key |
+| `autoClose` | boolean, string | `true` | Configure the auto close behavior of the dropdown: <ul class="my-2"><li>`true` - the dropdown will be closed by clicking outside or inside the dropdown menu.</li><li>`false` - the dropdown will be closed by clicking the toggle button and manually calling `hide` or `toggle` method. (Also will not be closed by pressing <kbd>ESC</kbd> key)</li><li>`'inside'` - the dropdown will be closed (only) by clicking inside the dropdown menu.</li>  <li>`'outside'` - the dropdown will be closed (only) by clicking outside the dropdown menu.</li></ul> Note: the dropdown can always be closed with the <kbd>ESC</kbd> key |
 | `boundary` | string, element | `'clippingParents'` | Overflow constraint boundary of the dropdown menu (applies only to Popper's preventOverflow modifier). By default it's `clippingParents` and can accept an HTMLElement reference (via JavaScript only). For more information refer to Popper's [detectOverflow docs](https://popper.js.org/docs/v2/utils/detect-overflow/#boundary). |
 | `display` | string | `'dynamic'` | By default, we use Popper for dynamic positioning. Disable this with `static`. |
 | `offset` | array, string, function | `[0, 2]` |  Offset of the dropdown relative to its target. You can pass a string in data attributes with comma separated values like: `data-coreui-offset="10,20"`. When a function is used to determine the offset, it is called with an object containing the popper placement, the reference, and popper rects as its first argument. The triggering element DOM node is passed as the second argument. The function must return an array with two numbers: [skidding](https://popper.js.org/docs/v2/modifiers/offset/#skidding-1), [distance](https://popper.js.org/docs/v2/modifiers/offset/#distance-1). For more information refer to Popper's [offset docs](https://popper.js.org/docs/v2/modifiers/offset/#options). |
@@ -1100,6 +1104,12 @@ myDropdown.addEventListener('show.coreui.dropdown', event => {
 Dropdowns use local CSS variables on `.dropdown-menu` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
 
 {{< scss-docs name="dropdown-css-vars" file="scss/_dropdown.scss" >}}
+
+{{< callout info >}}
+Dropdown items include at least one variable that is not set on `.dropdown`. This allows you to provide a new value while Bootstrap defaults to a fallback value.
+
+- `--cui-dropdown-item-border-radius`
+{{< /callout >}}
 
 Customization through CSS variables can be seen on the `.dropdown-menu-dark` class where we override specific values without adding duplicate CSS selectors.
 

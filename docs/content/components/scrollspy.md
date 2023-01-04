@@ -27,7 +27,7 @@ If you're making a scrollable container (other than the `<body>`), be sure to ha
 Scroll the area below the navbar and watch the active class change. The dropdown items will be highlighted as well.
 
 <div class="docs-example">
-  <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
+  <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 rounded-2">
     <a class="navbar-brand" href="#">Navbar</a>
     <ul class="nav nav-pills">
       <li class="nav-item">
@@ -47,7 +47,7 @@ Scroll the area below the navbar and watch the active class change. The dropdown
       </li>
     </ul>
   </nav>
-  <div data-coreui-spy="scroll" data-coreui-target="#navbar-example2" data-coreui-offset="0" class="scrollspy-example" tabindex="0">
+  <div class="scrollspy-example bg-body-tertiary p-3 rounded-2" data-coreui-spy="scroll" data-coreui-target="#navbar-example2" data-coreui-root-margin="0px 0px -40%" data-coreui-smooth-scroll="true" tabindex="0">
     <h4 id="scrollspyHeading1">First heading</h4>
     <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
     <h4 id="scrollspyHeading2">Second heading</h4>
@@ -62,7 +62,7 @@ Scroll the area below the navbar and watch the active class change. The dropdown
 </div>
 
 ```html
-<nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3">
   <a class="navbar-brand" href="#">Navbar</a>
   <ul class="nav nav-pills">
     <li class="nav-item">
@@ -82,7 +82,7 @@ Scroll the area below the navbar and watch the active class change. The dropdown
     </li>
   </ul>
 </nav>
-<div data-coreui-spy="scroll" data-coreui-target="#navbar-example2" data-coreui-offset="0" class="scrollspy-example" tabindex="0">
+<div data-coreui-spy="scroll" data-coreui-target="#navbar-example2" data-coreui-root-margin="0px 0px -40%" data-coreui-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
   <h4 id="scrollspyHeading1">First heading</h4>
   <p>...</p>
   <h4 id="scrollspyHeading2">Second heading</h4>

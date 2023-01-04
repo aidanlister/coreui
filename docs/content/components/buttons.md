@@ -29,7 +29,7 @@ Buttons show what action will happen when the user clicks or touches it. Bootstr
 {{< /example >}}
 
 {{< callout info >}}
-{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{< partial "callouts/warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
 
 ### With icons

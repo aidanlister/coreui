@@ -213,7 +213,7 @@ Using the grid, wrap cards in columns and rows as needed.
 
 {{< example >}}
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
@@ -443,7 +443,7 @@ Set a `background-color` with contrasting foreground `color` with [our `.text-bg
 {{< /example >}}
 
 {{< callout info >}}
-{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{< partial "callouts/warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
 
 ### Border

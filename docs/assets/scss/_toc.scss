@@ -59,14 +59,14 @@
     &:focus,
     &:active,
     &[aria-expanded="true"] {
-      color: var(--bd-violet);
+      color: var(--cui-violet);
       background-color: $white;
-      border-color: var(--bd-violet);
+      border-color: var(--cui-violet);
     }
 
     &:focus,
     &[aria-expanded="true"] {
-      box-shadow: 0 0 0 3px rgba(var(--bd-violet-rgb), .25);
+      box-shadow: 0 0 0 3px rgba(var(--cui-violet-rgb), .25);
     }
   }
 }

@@ -32,7 +32,7 @@ myModal.addEventListener('shown.coreui.modal', () => {
 ```
 
 {{< callout info >}}
-{{< partial "callout-info-prefersreducedmotion.md" >}}
+{{< partial "callouts/info-prefersreducedmotion.md" >}}
 {{< /callout >}}
 
 Keep reading for demos and usage guidelines.
@@ -43,7 +43,7 @@ Keep reading for demos and usage guidelines.
 
 Below is a _static_ modal example (meaning its `position` and `display` have been overridden). Included are the modal header, modal body (required for `padding`), and modal footer (optional). We ask that you include modal headers with dismiss actions whenever possible, or provide another explicit dismiss action.
 
-<div class="docs-example bg-light">
+<div class="docs-example bg-body-tertiary">
   <div class="modal position-static d-block" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -330,10 +330,10 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
       </div>
       <div class="modal-body">
         <h5>Popover in a modal</h5>
-        <p>This <a href="#" role="button" class="btn btn-secondary" data-coreui-toggle="popover" title="Popover title" data-coreui-content="Popover body content is set in this attribute." data-coreui-container="#exampleModalPopovers">button</a> triggers a popover on click.</p>
+        <p>This <button class="btn btn-secondary" data-coreui-toggle="popover" title="Popover title" data-coreui-content="Popover body content is set in this attribute." data-coreui-container="#exampleModalPopovers">button</button> triggers a popover on click.</p>
         <hr>
         <h5>Tooltips in a modal</h5>
-        <p><a href="#" data-coreui-toggle="tooltip" title="Tooltip" data-coreui-container="#exampleModalPopovers">This link</a> and <a href="#" data-coreui-toggle="tooltip" title="Tooltip" data-coreui-container="#exampleModalPopovers">that link</a> have tooltips on hover.</p>
+        <p>This <button class="btn btn-secondary" data-coreui-toggle="popover" title="Popover title" data-coreui-content="Popover body content is set in this attribute.">button</button> triggers a popover on click.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
@@ -538,7 +538,7 @@ Toggle between multiple modals with some clever placement of the `data-coreui-ta
     </div>
   </div>
 </div>
-<a class="btn btn-primary" data-coreui-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
+<button class="btn btn-primary" data-coreui-target="#exampleModalToggle" data-coreui-toggle="modal">Open first modal</button>
 {{< /example >}}
 
 ### Change animation
@@ -820,7 +820,7 @@ const myModalAlternative = new coreui.Modal('#myModal', options)
 ### Methods
 
 {{< callout danger >}}
-{{< partial "callout-danger-async-methods.md" >}}
+{{< partial "callouts/danger-async-methods.md" >}}
 {{< /callout >}}
 
 #### Passing options

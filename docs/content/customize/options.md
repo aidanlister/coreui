@@ -13,6 +13,7 @@ You can find and customize these variables for key global options in CoreUI for 
 | Variable                       | Values                             | Description                                                                            |
 | ------------------------------ | ---------------------------------- | -------------------------------------------------------------------------------------- |
 | `$spacer`                      | `1rem` (default), or any value > 0 | Specifies the default spacer value to programmatically generate our [spacer utilities]({{< docsref "/utilities/spacing" >}}). |
+| `$enable-dark-mode`            | `true` (default) or `false`        | Enables built-in [dark mode support]({{< docsref "/customize/color-modes#dark-mode" >}}) across the project and its components. |
 | `$enable-rounded`              | `true` (default) or `false`        | Enables predefined `border-radius` styles on various components. |
 | `$enable-shadows`              | `true` or `false` (default)        | Enables predefined decorative `box-shadow` styles on various components. Does not affect `box-shadow`s used for focus states. |
 | `$enable-gradients`            | `true` or `false` (default)        | Enables predefined gradients via `background-image` styles on various components. |
@@ -28,7 +29,5 @@ You can find and customize these variables for key global options in CoreUI for 
 | `$enable-deprecation-messages` | `true` (default) or `false`        | Set to `false` to hide warnings when using any of the deprecated mixins and functions that are planned to be removed in `v6`. |
 | `$enable-important-utilities`  | `true` (default) or `false`        | Enables the `!important` suffix in utility classes. |
 | `$enable-smooth-scroll`        | `true` (default) or `false`        | Applies `scroll-behavior: smooth` globally, except for users asking for reduced motion through [`prefers-reduced-motion` media query]({{< docsref "/getting-started/accessibility#reduced-motion" >}}) |
-| `$enable-ltr`                  | `false` or `false` (default)       | Enables Left-to-Right |
-| `$enable-rtl`                  | `true` (default) or `false`        | Enables Right-to-Left |
 {{< /bs-table >}}
 

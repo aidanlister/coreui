@@ -20,7 +20,7 @@ Here's what you need to know before getting started with the navbar:
 - Navbars can be themed with CSS variables that are scoped to the `.navbar` base class. `.navbar-light` has been deprecated and `.navbar-dark` has been rewritten to override CSS variables instead of adding additional styles.
 
 {{< callout info >}}
-{{< partial "callout-info-prefersreducedmotion.md" >}}
+{{< partial "callouts/info-prefersreducedmotion.md" >}}
 {{< /callout >}}
 
 ## Supported content
@@ -322,13 +322,17 @@ Mix and match with other components and utilities as needed.
 ## Color schemes
 
 {{< callout warning >}}
+**New dark navbars in v5.0.0 —** We've deprecated `.navbar-dark` in favor of the new `data-coreui-theme="dark"`. Add `data-coreui-theme="dark"` to the `.navbar` to enable a component-specific color mode. [Learn more about our color modes.]({{< docsref "/customize/color-modes" >}})
+
+---
+
 **New in v4.2.6:** CSS variables are applied to `.navbar`, defaulting to the "light" appearance, and can be overridden with `.navbar-dark`.
 {{< /callout >}}
 
 Navbar themes are easier than ever thanks to CoreUI for Bootstrap's combination of Sass and CSS variables. The default is our "light navbar" for use with light background colors, but you can also apply `.navbar-dark` for dark background colors. Then, customize with `.bg-*` utilities.
 
 <div class="docs-example">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg bg-body-secondary" data-coreui-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-coreui-toggle="collapse" data-coreui-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -357,7 +361,7 @@ Navbar themes are easier than ever thanks to CoreUI for Bootstrap's combination 
     </div>
   </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg bg-primary" data-coreui-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-coreui-toggle="collapse" data-coreui-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -386,7 +390,7 @@ Navbar themes are easier than ever thanks to CoreUI for Bootstrap's combination 
     </div>
   </nav>
 
-  <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;" data-coreui-theme="light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-coreui-toggle="collapse" data-coreui-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -417,15 +421,15 @@ Navbar themes are easier than ever thanks to CoreUI for Bootstrap's combination 
 </div>
 
 ```html
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar bg-dark" data-coreui-theme="dark">
   <!-- Navbar content -->
 </nav>
 
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar bg-primary" data-coreui-theme="dark">
   <!-- Navbar content -->
 </nav>
 
-<nav class="navbar" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <!-- Navbar content -->
 </nav>
 ```

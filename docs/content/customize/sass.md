@@ -57,6 +57,7 @@ In your `custom.scss`, you'll import CoreUI's source Sass files. You have two op
 
 // 3. Include remainder of required CoreUI stylesheets
 @import "../node_modules/@coreui/coreui/scss/variables";
+@import "../node_modules/@coreui/coreui/scss/variables-dark";
 
 // 4. Include any default map overrides here
 
@@ -102,6 +103,7 @@ $body-color: #111;
 
 // Required
 @import "../node_modules/@coreui/coreui/scss/variables";
+@import "../node_modules/@coreui/coreui/scss/variables-dark";
 @import "../node_modules/@coreui/coreui/scss/maps";
 @import "../node_modules/@coreui/coreui/scss/mixins";
 @import "../node_modules/@coreui/coreui/scss/root";
@@ -160,6 +162,7 @@ To remove colors from `$theme-colors`, or any other map, use `map-remove`. Be aw
 // Required
 @import "../node_modules/@coreui/coreui/scss/functions";
 @import "../node_modules/@coreui/coreui/scss/variables";
+@import "../node_modules/@coreui/coreui/scss/variables-dark";
 @import "../node_modules/@coreui/coreui/scss/maps";
 @import "../node_modules/@coreui/coreui/scss/mixins";
 @import "../node_modules/@coreui/coreui/scss/root";

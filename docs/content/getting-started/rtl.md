@@ -14,7 +14,7 @@ You may also want to read up on [the RTLCSS project](https://rtlcss.com/), as it
 
 ## Required HTML
 
-There are two strict requirements for enabling RTL in Bootstrap-powered pages.
+There are two strict requirements for enabling RTL in CoreUI-powered pages.
 
 1. Set `dir="rtl"` on the `<html>` element.
 2. Add an appropriate `lang` attribute, like `lang="ar"`, on the `<html>` element.
@@ -73,12 +73,35 @@ Working with RTL, through our source Sass or compiled CSS, shouldn't be much dif
 
 ## Customize from source
 
-When it comes to [customization]({{< docsref "/customize/sass" >}}), the preferred way is to take advantage of variables, maps, and mixins.
-<!-- TODO: find solution ### Alternative font stack
+When it comes to [customization]({{< docsref "/customize/sass" >}}), the preferred way is to take advantage of variables, maps, and mixins. This approach works the same for RTL, even if it's post-processed from the compiled files, thanks to [how RTLCSS works](https://rtlcss.com/learn/getting-started/why-rtlcss/).
+
+### Custom RTL values
+
+Using [RTLCSS value directives](https://rtlcss.com/learn/usage-guide/value-directives/), you can make a variable output a different value for RTL. For example, to decrease the weight for `$font-weight-bold` throughout the codebase, you may use the `/*rtl: {value}*/` syntax:
+
+```scss
+$font-weight-bold: 700 #{/* rtl:600 */} !default;
+```
+
+Which would output to the following for our default CSS and RTL CSS:
+
+```css
+/* coreui.css */
+dt {
+  font-weight: 700 /* rtl:600 */;
+}
+
+/* coreui.rtl.css */
+dt {
+  font-weight: 600;
+}
+```
+
+### Alternative font stack
 
 In the case you're using a custom font, be aware that not all fonts support the non-Latin alphabet. To switch from Pan-European to Arabic family, you may need to use `/*rtl:insert: {value}*/` in your font stack to modify the names of font families.
 
-For example, to switch from `Helvetica Neue Webfont` for LTR to `Helvetica Neue Arabic` for RTL, your Sass code look like this:
+For example, to switch from `Helvetica Neue` font for LTR to `Helvetica Neue Arabic` for RTL, your Sass code could look like this:
 
 ```scss
 $font-family-sans-serif:
@@ -101,29 +124,49 @@ $font-family-sans-serif:
   sans-serif,
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-``` -->
+```
 
 ### LTR and RTL at the same time
 
-Need both LTR and RTL on the same page? All you have to do is set following variables:
+Need both LTR and RTL on the same page? Thanks to [RTLCSS String Maps](https://rtlcss.com/learn/usage-guide/string-map/), this is pretty straightforward. Wrap your `@import`s with a class, and set a custom rename rule for RTLCSS:
 
 ```scss
-$enable-ltr: true;
-$enable-rtl: true;
+/* rtl:begin:options: {
+  "autoRename": true,
+  "stringMap":[ {
+    "name": "ltr-rtl",
+    "priority": 100,
+    "search": ["ltr"],
+    "replace": ["rtl"],
+    "options": {
+      "scope": "*",
+      "ignoreCase": false
+    }
+  } ]
+} */
+.ltr {
+  @import "../node_modules/@coreui/coreui/scss/coreui";
+}
+/*rtl:end:options*/
 ```
 
+After running Sass then RTLCSS, each selector in your CSS files will be prepended by `.ltr`, and `.rtl` for RTL files. Now you're able to use both files on the same page, and simply use `.ltr` or `.rtl` on your components wrappers to use one or the other direction.
 
-After running Sass, each selector in your CSS files will be prepended by `html:not([dir=rtl])`, and `*[dir=rtl]` for RTL files. Now you're able to use both files on the same page.
+{{< callout warning >}}
+#### Edge cases and known limitations
 
-### RTL only
+While this approach is understandable, please pay attention to the following:
 
-By default LTR is enable and RTL is disable, but you can easily change it and use only RTL.
+1. When switching `.ltr` and `.rtl`, make sure you add `dir` and `lang` attributes accordingly.
+2. Loading both files can be a real performance bottleneck: consider some [optimization]({{< docsref "/customize/optimize" >}}), and maybe try to [load one of those files asynchronously](https://www.filamentgroup.com/lab/load-css-simpler/).
+3. Nesting styles this way will prevent our `form-validation-state()` mixin from working as intended, thus require you tweak it a bit by yourself.
+{{< /callout >}}
 
-```scss
-$enable-ltr: false;
-$enable-rtl: true;
-```
+## The breadcrumb case
+
+The [breadcrumb separator]({{< docsref "/components/breadcrumb" >}}/#changing-the-separator) is the only case requiring its own brand-new variable— namely `$breadcrumb-divider-flipped` —defaulting to `$breadcrumb-divider`.
 
 ## Additional resources
 
+- [RTLCSS](https://rtlcss.com/)
 - [RTL Styling 101](https://rtlstyling.com/posts/rtl-styling)

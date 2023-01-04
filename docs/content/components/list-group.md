@@ -161,6 +161,10 @@ Add `.list-group-horizontal` to change the layout of list group items from verti
 
 ## Contextual classes
 
+{{< callout info >}}
+**Heads up!** As of v5.0.0, the `list-group-item-variant()` Sass mixin is deprecated. List group item variants now have their CSS variables overridden in [the Sass loop](#sass-loop).
+{{< /callout >}}
+
 Use contextual classes to style list items with a stateful background and color.
 
 {{< example >}}
@@ -188,7 +192,7 @@ Contextual classes also work with `.list-group-item-action`. Note the addition o
 {{< /example >}}
 
 {{< callout info >}}
-{{< partial "callout-warning-color-assistive-technologies.md" >}}
+{{< partial "callouts/warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
 
 ## With badges
@@ -448,7 +452,7 @@ To make tabs panel fade in, add `.fade` to each `.tab-pane`. The first tab pane 
 #### constructor
 
 {{< callout danger >}}
-{{< partial "callout-danger-async-methods.md" >}}
+{{< partial "callouts/danger-async-methods.md" >}}
 {{< /callout >}}
 
 Activates your content as a tab element.
@@ -518,7 +522,7 @@ Used in combination with `$theme-colors` to generate the [contextual variant cla
 
 ### SASS loop
 
-Loop that generates the modifier classes with the `list-group-item-variant()` mixin.
+Loop that generates the modifier classes with an overriding of CSS variables.
 
 {{< scss-docs name="list-group-modifiers" file="scss/_list-group.scss" >}}
 
