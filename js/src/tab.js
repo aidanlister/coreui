@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): tab.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (__COREUI_VERSION__): tab.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's tab.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)

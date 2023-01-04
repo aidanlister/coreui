@@ -17,6 +17,9 @@ const plugins = [
     exclude: 'node_modules/**',
     // Include the helpers in the bundle, at most one copy of each
     babelHelpers: 'bundled'
+  }),
+  replace({
+    __COREUI_VERSION__: `v${process.env.npm_package_version}`
   })
 ]
 const globals = {
@@ -40,7 +43,7 @@ if (BUNDLE) {
 const rollupConfig = {
   input: path.resolve(__dirname, `../js/index.${ESM ? 'esm' : 'umd'}.js`),
   output: {
-    banner,
+    banner: banner(),
     file: path.resolve(__dirname, `../dist/js/${fileDestination}.js`),
     format: ESM ? 'esm' : 'umd',
     globals,

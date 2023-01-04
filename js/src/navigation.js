@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): navigation.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (__COREUI_VERSION__): navigation.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
