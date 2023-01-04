@@ -1,37 +1,36 @@
 <header class="navbar bg-body navbar-expand sticky-top border-bottom mb-5">
   <div class="container-fluid">
-    <button class="navbar-toggler d-lg-none" type="button" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+    <button class="navbar-toggler d-block d-lg-none border-0" type="button" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
       {{ partial "icons/hamburger.svg" (dict "class" "bi" "width" "32" "height" "32") }}
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
-        <li class="nav-item col-6 col-lg-auto">
-          <a class="nav-link py-2 px-0 px-lg-2" href="{{ .Site.Params.github_org }}" target="_blank" rel="noopener">
+      <ul class="navbar-nav flex-row ms-md-auto">
+        <li class="nav-item">
+          <a class="nav-link py-2 px-2 px-lg-2" href="{{ .Site.Params.github_org }}" target="_blank" rel="noopener">
             {{ partial "icons/github.svg" (dict "class" "icon icon-xl") }}
           </a>
         </li>
-        <li class="nav-item col-6 col-lg-auto">
-          <a class="nav-link py-2 px-0 px-lg-2" href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank" rel="noopener">
+        <li class="nav-item">
+          <a class="nav-link py-2 px-2 px-lg-2" href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank" rel="noopener">
             {{ partial "icons/twitter.svg" (dict "class" "icon icon-xl") }}
           </a>
         </li>
-        <li class="nav-item col-6 col-lg-auto">
-          <a class="nav-link py-2 px-0 px-lg-2" href="https://opencollective.com/{{ .Site.Params.opencollective }}" target="_blank" rel="noopener">
+        <li class="nav-item">
+          <a class="nav-link py-2 px-2 px-lg-2" href="https://opencollective.com/{{ .Site.Params.opencollective }}" target="_blank" rel="noopener">
             {{ partial "icons/opencollective.svg" (dict "class" "icon icon-xl") }}
           </a>
         </li>
-        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+        <li class="nav-item py-2 py-lg-1">
           <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-body text-opacity-75"></div>
           <hr class="d-lg-none my-2 text-white-50">
         </li>
         <li class="nav-item dropdown">
-          <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+          <button class="btn btn-link nav-link py-2 px-2 px-lg-2 dropdown-toggle d-flex align-items-center"
                   type="button"
                   aria-expanded="false"
                   data-coreui-toggle="dropdown"
                   data-coreui-display="static">
             {{ partial "icons/contrast.svg" (dict "class" "theme-icon-active icon icon-xl") }}
-            <span class="d-lg-none ms-2">Toggle theme</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--cui-dropdown-min-width: 8rem;">
             <li>
@@ -58,15 +57,15 @@
           </ul>
         </li>
       </ul>
-      <a class="btn btn-outline-primary my-2 my-md-0 ms-md-3" href="/getting-started/download/">
+      <a class="btn btn-outline-primary my-2 my-md-0 ms-md-3 d-none d-lg-block" href="/getting-started/download/">
         {{ partial "icons/cloud-download.svg" (dict "class" "icon me-2") }}
         Download
       </a>
-      <a class="btn btn-outline-primary my-2 my-md-0 ms-md-3" href="https://coreui.io/about/services/?docs=coreui-header-button">
-        {{ partial "icons/handshake.svg" (dict "class" "icon me-2") }}
-        Hire Us
+      <a class="btn btn-outline-primary my-2 my-md-0 ms-auto ms-md-3" href="https://coreui.io/about/services/?docs=coreui-header-button">
+        {{ partial "icons/handshake.svg" (dict "class" "icon me-lg-2") }}
+        <span class="d-none d-lg-inline-block">Hire Us</span>
       </a>
-      <a class="btn btn-primary my-2 my-md-0 ms-md-3" href="https://coreui.io/pricing/?framework=bootstrap&docs=coreui-header-button">
+      <a class="btn btn-primary my-2 my-md-0 ms-2 ms-md-3" href="https://coreui.io/pricing/?framework=bootstrap&docs=coreui-header-button">
         Buy CoreUI PRO
       </a>
     </div>
