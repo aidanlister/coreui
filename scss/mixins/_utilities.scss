@@ -26,9 +26,6 @@
     // State params to generate pseudo-classes
     $state: if(map-has-key($utility, state), map-get($utility, state), ());
 
-    // Generate prefixed selector for dark mode
-    $dark-mode: if(map-has-key($utility, dark-mode), map-get($utility, dark-mode), ());
-
     $infix: if($property-class == "" and str-slice($infix, 1, 1) == "-", str-slice($infix, 2), $infix);
 
     // Don't prefix if value key is null (e.g. with shadow class)
@@ -48,6 +45,7 @@
     }
 
     $is-css-var: map-get($utility, css-var);
+    $is-dark-mode: map-get($utility, dark-mode);
     $is-local-vars: map-get($utility, local-vars);
     $is-rtl: map-get($utility, rtl);
 
@@ -57,12 +55,13 @@
       }
 
       @if $is-css-var {
-        .#{$property-class + $infix + $property-class-modifier} {
-          --#{$prefix}#{$css-variable-name}: #{$value};
-        }
-
-        @if $enable-dark-mode and $dark-mode {
-          #{theme-prefix("dark", "#{$property-class + $infix + $property-class-modifier}")} {
+        @if $enable-dark-mode and $is-dark-mode {
+          #{theme-prefix("dark", "#{$property-class + $infix + $property-class-modifier}")},
+          .#{$property-class + $infix + $property-class-modifier} {
+            --#{$prefix}#{$css-variable-name}: #{$value};
+          }
+        } @else {
+          .#{$property-class + $infix + $property-class-modifier} {
             --#{$prefix}#{$css-variable-name}: #{$value};
           }
         }
@@ -73,20 +72,26 @@
           }
         }
       } @else {
-        .#{$property-class + $infix + $property-class-modifier} {
-          @each $property in $properties {
-            @if $is-local-vars {
-              @each $local-var, $variable in $is-local-vars {
-                --#{$prefix}#{$local-var}: #{$variable};
+        @if $enable-dark-mode and $is-dark-mode {
+          #{theme-prefix("dark", "#{$property-class + $infix + $property-class-modifier}")},
+          .#{$property-class + $infix + $property-class-modifier} {
+            @each $property in $properties {
+              @if $is-local-vars {
+                @each $local-var, $variable in $is-local-vars {
+                  --#{$prefix}#{$local-var}: #{$variable};
+                }
               }
+              #{$property}: $value if($enable-important-utilities, !important, null);
             }
-            #{$property}: $value if($enable-important-utilities, !important, null);
           }
-        }
-
-        @if $enable-dark-mode and $dark-mode {
-          @each $property in $properties {
-            #{theme-prefix("dark", "#{$property-class + $infix + $property-class-modifier}")} {
+        } @else {
+          .#{$property-class + $infix + $property-class-modifier} {
+            @each $property in $properties {
+              @if $is-local-vars {
+                @each $local-var, $variable in $is-local-vars {
+                  --#{$prefix}#{$local-var}: #{$variable};
+                }
+              }
               #{$property}: $value if($enable-important-utilities, !important, null);
             }
           }
