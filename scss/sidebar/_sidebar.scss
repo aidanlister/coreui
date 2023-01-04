@@ -70,14 +70,12 @@
   padding: var(--#{$prefix}sidebar-padding-y) var(--#{$prefix}sidebar-padding-x);
   color: var(--#{$prefix}sidebar-color);
   background: var(--#{$prefix}sidebar-bg);
-  // @include ltr-rtl("border-right", var(--#{$prefix}sidebar-border-width) solid var(--#{$prefix}sidebar-border-color));
-  border-right: var(--#{$prefix}sidebar-border-width) solid var(--#{$prefix}sidebar-border-color);
   box-shadow: none;
   @include transition($sidebar-transition);
 
   &:not(.sidebar-end){
-    // @include ltr-rtl("margin-left", 0);
     margin-left: 0;
+    border-right: var(--#{$prefix}sidebar-border-width) solid var(--#{$prefix}sidebar-border-color);
     ~ * {
       --#{$prefix}sidebar-occupy-start: #{$sidebar-width};
     }
@@ -85,8 +83,8 @@
 
   &.sidebar-end {
     order: 99;
-    // @include ltr-rtl("margin-right", 0);
     margin-right: 0;
+    border-left: var(--#{$prefix}sidebar-border-width) solid var(--#{$prefix}sidebar-border-color);
     ~ * {
       --#{$prefix}sidebar-occupy-end: #{$sidebar-width};
     }
@@ -117,14 +115,12 @@
   @include media-breakpoint-up($mobile-breakpoint) {
     &.hide {
       &:not(.sidebar-end){
-        // @include ltr-rtl("margin-left", calc(-1 * var(--#{$prefix}sidebar-width)));
         margin-left: calc(-1 * var(--#{$prefix}sidebar-width)); // stylelint-disable-line function-disallowed-list
         ~ * {
           --#{$prefix}sidebar-occupy-start: 0;
         }
       }
       &.sidebar-end {
-        // @include ltr-rtl("margin-right", calc(-1 * var(--#{$prefix}sidebar-width)));
         margin-right: calc(-1 * var(--#{$prefix}sidebar-width)); // stylelint-disable-line function-disallowed-list
         ~ * {
           --#{$prefix}sidebar-occupy-end: 0;
@@ -141,12 +137,10 @@
       z-index: $zindex-fixed;
 
       &:not(.sidebar-end) {
-        // @include ltr-rtl("left", 0);
         left: 0;
       }
 
       &.sidebar-end {
-        // @include ltr-rtl("right", 0);
         right: 0;
       }
     }
@@ -167,7 +161,6 @@
     z-index: $zindex-fixed + 2;
 
     &:not(.sidebar-end) {
-      // @include ltr-rtl("left", 0);
       left: 0;
       ~ * {
         --#{$prefix}sidebar-occupy-start: 0;
@@ -175,7 +168,6 @@
     }
 
     &.sidebar-end {
-      // @include ltr-rtl("right", 0);
       right: 0;
       ~ * {
         --#{$prefix}sidebar-occupy-end: 0;
@@ -192,26 +184,22 @@
     z-index: $zindex-fixed + 1;
 
     &:not(.sidebar-end) {
-      // @include ltr-rtl("left", 0);
       left: 0;
       ~ * {
         --#{$prefix}sidebar-occupy-start: 0 !important; // stylelint-disable-line
       }
 
       &:not(.show) {
-        // @include ltr-rtl("margin-left", calc(-1 * var(--#{$prefix}sidebar-width)));
         margin-left: calc(-1 * var(--#{$prefix}sidebar-width)); // stylelint-disable-line function-disallowed-list
       }
     }
     &.sidebar-end {
-      // @include ltr-rtl("right", 0);
       right: 0;
       ~ * {
         --#{$prefix}sidebar-occupy-end: 0 !important; // stylelint-disable-line
       }
 
       &:not(.show) {
-        // @include ltr-rtl("margin-right", calc(-1 * var(--#{$prefix}sidebar-width)));
         margin-right: calc(-1 * var(--#{$prefix}sidebar-width)); // stylelint-disable-line function-disallowed-list
       }
     }
@@ -221,7 +209,6 @@
 .sidebar-close {
   position: absolute;
   top: 0;
-  // @include ltr-rtl("right", 0);
   right: 0;
   width: var(--#{$prefix}sidebar-width);
   height: var(--#{$prefix}sidebar-header-height);
@@ -241,8 +228,8 @@
 .sidebar-brand {
   display: flex;
   flex: 0 0 var(--#{$prefix}sidebar-brand-height);
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
   color: var(--#{$prefix}sidebar-brand-color);
   background: var(--#{$prefix}sidebar-brand-bg);
 
@@ -296,9 +283,10 @@
     background-position: center;
     background-size: calc(var(--#{$prefix}sidebar-toggler-indicator-height) * .25); // stylelint-disable-line function-disallowed-list
     @include transition($sidebar-toggler-transition);
-    // @include rtl() {
+
+    /* rtl:raw:
     transform: rotate(-180deg);
-    // }
+    */
   }
 
   &:focus {
@@ -315,7 +303,7 @@
   .sidebar-end & {
     justify-content: flex-start;
     &::before {
-      transform: rotate(-180deg);
+      transform: rotate(-180deg) #{"/* rtl:rotate(0deg) */"};
     }
   }
 }
