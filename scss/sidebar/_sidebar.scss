@@ -228,8 +228,6 @@
 .sidebar-brand {
   display: flex;
   flex: 0 0 var(--#{$prefix}sidebar-brand-height);
-  // align-items: center;
-  // justify-content: center;
   color: var(--#{$prefix}sidebar-brand-color);
   background: var(--#{$prefix}sidebar-brand-bg);
 
