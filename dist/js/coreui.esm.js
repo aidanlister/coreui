@@ -1,14 +1,14 @@
 /*!
-  * CoreUI [object Object] v4.2.6 (https://coreui.io)
+  * CoreUI v5.0.0-alpha.0 (https://coreui.io)
   * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
-  * Licensed under MIT (https://coreui.io)
+  * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
   */
 import * as Popper from '@popperjs/core';
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/index.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/index.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/index.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -257,8 +257,8 @@ const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dom/event-handler.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): dom/event-handler.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's dom/event-handler.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -482,8 +482,8 @@ function hydrateObj(obj, meta = {}) {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dom/data.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): dom/data.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's dom/data.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -533,8 +533,8 @@ const Data = {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dom/manipulator.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): dom/manipulator.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's dom/manipulator.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -593,8 +593,8 @@ const Manipulator = {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/config.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/config.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/config.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -648,8 +648,8 @@ class Config {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): base-component.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): base-component.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's base-component.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -660,7 +660,7 @@ class Config {
  * Constants
  */
 
-const VERSION = '4.2.6';
+const VERSION = '5.0.0-alpha.0';
 
 /**
  * Class definition
@@ -719,8 +719,8 @@ class BaseComponent extends Config {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dom/selector-engine.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): dom/selector-engine.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's dom/selector-engine.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -810,8 +810,8 @@ const SelectorEngine = {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/component-functions.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/component-functions.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/component-functions.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -837,8 +837,8 @@ const enableDismissTrigger = (component, method = 'hide') => {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): alert.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): alert.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's alert.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -914,8 +914,8 @@ defineJQueryPlugin(Alert);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): button.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): button.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's button.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -980,8 +980,8 @@ defineJQueryPlugin(Button);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/swipe.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/swipe.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/swipe.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -1102,8 +1102,8 @@ class Swipe extends Config {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): carousel.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): carousel.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's carousel.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -1477,8 +1477,8 @@ defineJQueryPlugin(Carousel);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): collapse.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): collapse.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's collapse.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -1713,8 +1713,8 @@ defineJQueryPlugin(Collapse);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): dropdown.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): dropdown.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's dropdown.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -2083,8 +2083,8 @@ defineJQueryPlugin(Dropdown);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/scrollBar.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/scrollBar.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's  util/scrollBar.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -2183,8 +2183,8 @@ class ScrollBarHelper {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/backdrop.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/backdrop.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/backdrop.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -2310,8 +2310,8 @@ class Backdrop extends Config {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/focustrap.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/focustrap.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/focustrap.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -2411,8 +2411,8 @@ class FocusTrap extends Config {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): modal.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): modal.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's modal.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -2720,8 +2720,8 @@ defineJQueryPlugin(Modal);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): navigation.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): navigation.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
@@ -2974,8 +2974,8 @@ defineJQueryPlugin(Navigation);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): offcanvas.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): offcanvas.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's offcanvas.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -3207,8 +3207,8 @@ defineJQueryPlugin(Offcanvas);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/sanitizer.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/sanitizer.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/sanitizer.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -3305,8 +3305,8 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): util/template-factory.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): util/template-factory.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's util/template-factory.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -3443,8 +3443,8 @@ class TemplateFactory extends Config {
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): tooltip.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): tooltip.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's tooltip.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -3957,8 +3957,8 @@ defineJQueryPlugin(Tooltip);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): popover.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): popover.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's popover.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -4040,8 +4040,8 @@ defineJQueryPlugin(Popover);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): scrollspy.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): scrollspy.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's scrollspy.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -4302,8 +4302,8 @@ defineJQueryPlugin(ScrollSpy);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): sidebar.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): sidebar.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
@@ -4582,8 +4582,8 @@ defineJQueryPlugin(Sidebar);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): tab.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): tab.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's tab.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -4846,8 +4846,8 @@ defineJQueryPlugin(Tab);
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI (v4.2.6): toast.js
- * Licensed under MIT (https://coreui.io/license)
+ * CoreUI (v5.0.0-alpha.0): toast.js
+ * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
  *
  * This component is a modified version of the Bootstrap's toast.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)

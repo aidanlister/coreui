@@ -1,7 +1,7 @@
 /*!
-  * CoreUI collapse.js v4.2.6 (https://coreui.io)
+  * CoreUI collapse.js v5.0.0-alpha.0 (https://coreui.io)
   * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
-  * Licensed under MIT (https://coreui.io)
+  * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./util/index.js'), require('./dom/event-handler.js'), require('./dom/selector-engine.js'), require('./base-component.js')) :
@@ -11,8 +11,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): collapse.js
-   * Licensed under MIT (https://coreui.io/license)
+   * CoreUI (__COREUI_VERSION__): collapse.js
+   * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
    *
    * This component is a modified version of the Bootstrap's collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)

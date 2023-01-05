@@ -1,7 +1,7 @@
 /*!
-  * CoreUI tooltip.js v4.2.6 (https://coreui.io)
+  * CoreUI tooltip.js v5.0.0-alpha.0 (https://coreui.io)
   * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
-  * Licensed under MIT (https://coreui.io)
+  * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@popperjs/core'), require('./util/index.js'), require('./util/sanitizer.js'), require('./dom/event-handler.js'), require('./dom/manipulator.js'), require('./base-component.js'), require('./util/template-factory.js')) :
@@ -30,8 +30,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): tooltip.js
-   * Licensed under MIT (https://coreui.io/license)
+   * CoreUI (__COREUI_VERSION__): tooltip.js
+   * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
    *
    * This component is a modified version of the Bootstrap's tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)

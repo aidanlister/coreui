@@ -1,7 +1,7 @@
 /*!
-  * CoreUI modal.js v4.2.6 (https://coreui.io)
+  * CoreUI modal.js v5.0.0-alpha.0 (https://coreui.io)
   * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
-  * Licensed under MIT (https://coreui.io)
+  * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./util/index.js'), require('./dom/event-handler.js'), require('./dom/selector-engine.js'), require('./util/scrollbar.js'), require('./base-component.js'), require('./util/backdrop.js'), require('./util/focustrap.js'), require('./util/component-functions.js')) :
@@ -11,8 +11,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): modal.js
-   * Licensed under MIT (https://coreui.io/license)
+   * CoreUI (__COREUI_VERSION__): modal.js
+   * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
    *
    * This component is a modified version of the Bootstrap's modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)

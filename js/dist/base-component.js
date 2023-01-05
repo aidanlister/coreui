@@ -1,7 +1,7 @@
 /*!
-  * CoreUI base-component.js v4.2.6 (https://coreui.io)
+  * CoreUI base-component.js v5.0.0-alpha.0 (https://coreui.io)
   * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
-  * Licensed under MIT (https://coreui.io)
+  * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./dom/data.js'), require('./util/index.js'), require('./dom/event-handler.js'), require('./util/config.js')) :
@@ -11,8 +11,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): base-component.js
-   * Licensed under MIT (https://coreui.io/license)
+   * CoreUI (__COREUI_VERSION__): base-component.js
+   * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
    *
    * This component is a modified version of the Bootstrap's base-component.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -23,7 +23,7 @@
    * Constants
    */
 
-  const VERSION = '4.2.6';
+  const VERSION = '5.0.0-alpha.0';
 
   /**
    * Class definition

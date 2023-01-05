@@ -1,7 +1,7 @@
 /*!
-  * CoreUI scrollbar.js v4.2.6 (https://coreui.io)
+  * CoreUI scrollbar.js v5.0.0-alpha.0 (https://coreui.io)
   * Copyright 2023 The CoreUI Team (https://github.com/orgs/coreui/people)
-  * Licensed under MIT (https://coreui.io)
+  * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('../dom/selector-engine.js'), require('../dom/manipulator.js'), require('./index.js')) :
@@ -11,8 +11,8 @@
 
   /**
    * --------------------------------------------------------------------------
-   * CoreUI (v4.2.6): util/scrollBar.js
-   * Licensed under MIT (https://coreui.io/license)
+   * CoreUI (__COREUI_VERSION__): util/scrollBar.js
+   * Licensed under MIT (https://github.com/coreui/coreui/blob/main/LICENSE)
    *
    * This component is a modified version of the Bootstrap's  util/scrollBar.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
